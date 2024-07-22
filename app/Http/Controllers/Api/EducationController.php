@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Requests\StoreEducationRequest;
+use App\Http\Requests\UpdateEducationRequest;
+use App\Models\Education;
 
 class EducationController extends Controller
 {
@@ -18,7 +20,7 @@ class EducationController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreEducationRequest $request)
     {
         //
     }
@@ -26,7 +28,7 @@ class EducationController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Education $education)
     {
         //
     }
@@ -34,7 +36,7 @@ class EducationController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateEducationRequest $request, Education $education)
     {
         //
     }
@@ -42,7 +44,7 @@ class EducationController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Education $education)
     {
         //
     }

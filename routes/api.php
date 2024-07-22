@@ -6,7 +6,11 @@ use \App\Http\Controllers\Api\EducationController;
 use App\Http\Controllers\Api\CertificationController;
 use App\Http\Controllers\Api\SubstitutionController;
 use App\Http\Controllers\Api\TransferController;
-
+use App\Http\Controllers\Api\DoctypeController;
+use App\Http\Controllers\Api\LevelController;
+use App\Http\Controllers\Api\PositionController;
+use App\Http\Controllers\Api\DivisionController;
+ 
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -23,10 +27,14 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::apiResource([
+Route::apiResources([
     'education' => EducationController::class,
-    'certification' =>CertificationController::class,
-    'substitution'=>SubstitutionController::class,
-    'transfer'=>TransferController::class,
+    'certification' => CertificationController::class,
+    'substitution' => SubstitutionController::class,
+    'transfer' => TransferController::class,
+    'education/doctype' => DoctypeController::class,
+    'education/level' => LevelController::class,
+    'position' => PositionController::class,
+    'division'=> DivisionController::class,
 
 ]);
