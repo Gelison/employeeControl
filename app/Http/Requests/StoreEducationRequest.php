@@ -11,7 +11,7 @@ class StoreEducationRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,15 @@ class StoreEducationRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'date' =>['string'],
+            'doctype_id' =>['required', 'exists:doctypes,id'],
+            'number' =>['string'],
+            'level_id' =>['required', 'exists:levels,id'],
+            'qualification' =>['string'],
+            'speciality' =>['string'],
+            'rank' =>['string'],
+            'education_form' =>['string'],
+            'institution' =>['string'],
         ];
     }
 }

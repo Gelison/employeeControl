@@ -10,7 +10,7 @@ use App\Http\Controllers\Api\DoctypeController;
 use App\Http\Controllers\Api\LevelController;
 use App\Http\Controllers\Api\PositionController;
 use App\Http\Controllers\Api\DivisionController;
- 
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -35,6 +35,6 @@ Route::apiResources([
     'education/doctype' => DoctypeController::class,
     'education/level' => LevelController::class,
     'position' => PositionController::class,
-    'division'=> DivisionController::class,
+    'division' => DivisionController::class,
 
 ]);

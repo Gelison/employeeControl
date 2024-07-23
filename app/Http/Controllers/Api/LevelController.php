@@ -7,6 +7,7 @@ use App\Http\Requests\StoreLevelRequest;
 use App\Http\Requests\UpdateLevelRequest;
 use App\Models\Level;
 
+
 class LevelController extends Controller
 {
     /**
