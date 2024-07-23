@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\Api\EducationController;
 use App\Http\Controllers\Api\CertificationController;
 use App\Http\Controllers\Api\SubstitutionController;
-// use App\Http\Controllers\Api\TransferController;
+use App\Http\Controllers\Api\TransferController;
 use App\Http\Controllers\Api\DoctypeController;
 use App\Http\Controllers\Api\LevelController;
 use App\Http\Controllers\Api\PositionController;
@@ -35,7 +35,7 @@ Route::apiResources([
     'education' => EducationController::class,
     'certification' => CertificationController::class,
     'substitution' => SubstitutionController::class,
-    // 'transfer' => TransferController::class,
+    'transfer' => TransferController::class,
     'doctype' => DoctypeController::class,
     'level' => LevelController::class,
     'position' => PositionController::class,

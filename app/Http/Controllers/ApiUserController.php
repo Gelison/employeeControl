@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\UserResource;
+use App\Models\User;
 
 class ApiUserController extends Controller
 {
@@ -13,7 +15,7 @@ class ApiUserController extends Controller
      */
     public function index()
     {
-        //
+        return UserResource::collection( User::with('information')->get());
     }
 
     /**

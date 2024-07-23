@@ -50,7 +50,7 @@ class PositionController extends Controller
         
         $position->delete();
         return response()->json([
-            'massage'=>'Category removed'
+            'massage' => 'entiti removed'
         ]);
     }
 

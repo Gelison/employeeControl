@@ -48,6 +48,6 @@ class DivisionController extends Controller
     {
         $division->delete();
         return response()->json([
-            'massage'=>'Category removed'
+            'massage' => 'entiti removed'
         ]);    }
 }

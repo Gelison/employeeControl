@@ -51,7 +51,7 @@ class LevelController extends Controller
     {
         $level->delete();
         return response()->json([
-            'massage'=>'Category removed'
+            'massage' => 'entiti removed'
         ]);
     }
 }

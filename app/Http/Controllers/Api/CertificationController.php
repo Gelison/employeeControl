@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCertificationRequest;
 use App\Http\Requests\UpdateCertificationRequest;
+use App\Http\Resources\CertificationResource;
 use App\Models\Certification;
 
 class CertificationController extends Controller
@@ -14,7 +15,7 @@ class CertificationController extends Controller
      */
     public function index()
     {
-        //
+        return CertificationResource::collection(Certification::with('division','position')->paginate(5));
     }
 
     /**
@@ -22,7 +23,7 @@ class CertificationController extends Controller
      */
     public function store(StoreCertificationRequest $request)
     {
-        //
+        return Certification::create($request->all());
     }
 
     /**
@@ -30,7 +31,7 @@ class CertificationController extends Controller
      */
     public function show(Certification $certification)
     {
-        //
+        return $certification;
     }
 
     /**
@@ -38,14 +39,19 @@ class CertificationController extends Controller
      */
     public function update(UpdateCertificationRequest $request, Certification $certification)
     {
-        //
+        $certification->update($request->all());
+        return $certification;
     }
+
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(Certification $certification)
     {
-        //
+        $certification->delete();
+        return response()->json([
+            'massage' => 'entiti removed'
+        ]);
     }
 }

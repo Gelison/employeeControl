@@ -50,7 +50,7 @@ class DoctypeController extends Controller
   
         $doctype->delete();
         return response()->json([
-            'massage'=>'Category removed'
+            'massage' => 'entiti removed'
         ]);
     }
 }

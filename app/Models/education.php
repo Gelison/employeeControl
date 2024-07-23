@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Education extends Model
 {
     use HasFactory;
-    
+
     protected $fillable = [
         'information_id',
         'date',
@@ -21,4 +21,5 @@ class Education extends Model
         'education_form',
         'institution'
     ];
+    
 }
