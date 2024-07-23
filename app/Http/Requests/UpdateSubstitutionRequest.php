@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateEducationRequest extends FormRequest
+class UpdateSubstitutionRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,15 +23,11 @@ class UpdateEducationRequest extends FormRequest
     {
         return [
             'information_id' => ['required', 'exists:information,id'],
-            'date' => ['string'],
-            'doctype_id' => ['required', 'exists:doctype,id'],
-            'number' => ['string'],
-            'level_id' => ['required', 'exists:level,id'],
-            'qualification' => ['string'],
-            'speciality' => ['string'],
-            'rank' => ['string'],
-            'education_form' => ['string'],
-            'institution' => ['string'],
+
+            'date' => ['required', 'string', 'max 10'],
+            'substitutions_occasion' => ['required', 'string'],
+            'order_number' => ['required', 'string', 'max 10'],
+            'position_id' => ['required', 'exists:position,id'],
         ];
     }
 }

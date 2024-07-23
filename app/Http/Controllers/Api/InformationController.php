@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreSubstitutionRequest;
-use App\Http\Requests\UpdateSubstitutionRequest;
-use App\Models\Substitution;
+use App\Http\Requests\StoreInformationRequest;
+use App\Http\Requests\UpdateInformationRequest;
+use App\Models\Information;
 
-class SubstitutionController extends Controller
+class InformationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,7 +20,7 @@ class SubstitutionController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreSubstitutionRequest $request)
+    public function store(StoreInformationRequest $request)
     {
         //
     }
@@ -28,7 +28,7 @@ class SubstitutionController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Substitution $substitution)
+    public function show(Information $information)
     {
         //
     }
@@ -36,7 +36,7 @@ class SubstitutionController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateSubstitutionRequest $request, Substitution $substitution)
+    public function update(UpdateInformationRequest $request, Information $information)
     {
         //
     }
@@ -44,7 +44,7 @@ class SubstitutionController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Substitution $substitution)
+    public function destroy(Information $information)
     {
         //
     }

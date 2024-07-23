@@ -22,10 +22,11 @@ class StoreEducationRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'information_id' =>['required', 'exists:information,id'],
             'date' =>['string'],
-            'doctype_id' =>['required', 'exists:doctypes,id'],
+            'doctype_id' =>['required', 'exists:doctype,id'],
             'number' =>['string'],
-            'level_id' =>['required', 'exists:levels,id'],
+            'level_id' =>['required', 'exists:level,id'],
             'qualification' =>['string'],
             'speciality' =>['string'],
             'rank' =>['string'],

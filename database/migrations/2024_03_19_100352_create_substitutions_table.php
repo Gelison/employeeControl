@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('information_id')->constrained();
 
             $table->string('date');         
-            $table->foreignId('order_number_id')->constrained();
+            $table->foreignId('order_number')->constrained();
             $table->string('substitutions_occasion');
             $table->foreignId('position_id')->constrained();
 

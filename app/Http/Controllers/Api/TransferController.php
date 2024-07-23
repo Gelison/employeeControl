@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Requests\StoreTransferRequest;
+use App\Http\Requests\UpdateTransferRequest;
+use App\Models\Transfer;
 
 class TransferController extends Controller
 {
@@ -18,7 +20,7 @@ class TransferController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreTransferRequest $request)
     {
         //
     }
@@ -26,7 +28,7 @@ class TransferController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Transfer $transfer)
     {
         //
     }
@@ -34,7 +36,7 @@ class TransferController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateTransferRequest $request, Transfer $transfer)
     {
         //
     }
@@ -42,7 +44,7 @@ class TransferController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Transfer $transfer)
     {
         //
     }

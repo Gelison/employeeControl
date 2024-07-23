@@ -5,11 +5,12 @@ use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\Api\EducationController;
 use App\Http\Controllers\Api\CertificationController;
 use App\Http\Controllers\Api\SubstitutionController;
-use App\Http\Controllers\Api\TransferController;
+// use App\Http\Controllers\Api\TransferController;
 use App\Http\Controllers\Api\DoctypeController;
 use App\Http\Controllers\Api\LevelController;
 use App\Http\Controllers\Api\PositionController;
 use App\Http\Controllers\Api\DivisionController;
+use App\Http\Controllers\ApiUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,13 +28,16 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
+
+
 Route::apiResources([
+    'user' =>ApiUserController::class,
     'education' => EducationController::class,
     'certification' => CertificationController::class,
     'substitution' => SubstitutionController::class,
-    'transfer' => TransferController::class,
-    'education/doctype' => DoctypeController::class,
-    'education/level' => LevelController::class,
+    // 'transfer' => TransferController::class,
+    'doctype' => DoctypeController::class,
+    'level' => LevelController::class,
     'position' => PositionController::class,
     'division' => DivisionController::class,
 

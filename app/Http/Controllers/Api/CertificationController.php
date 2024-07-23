@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Requests\StoreCertificationRequest;
+use App\Http\Requests\UpdateCertificationRequest;
+use App\Models\Certification;
 
 class CertificationController extends Controller
 {
@@ -18,7 +20,7 @@ class CertificationController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreCertificationRequest $request)
     {
         //
     }
@@ -26,7 +28,7 @@ class CertificationController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Certification $certification)
     {
         //
     }
@@ -34,7 +36,7 @@ class CertificationController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateCertificationRequest $request, Certification $certification)
     {
         //
     }
@@ -42,7 +44,7 @@ class CertificationController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Certification $certification)
     {
         //
     }
