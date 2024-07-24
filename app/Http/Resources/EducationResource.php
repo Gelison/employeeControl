@@ -20,9 +20,13 @@ class EducationResource extends JsonResource
             'informationId' => $this->information_id,
 
             'date' => $this->date,
-            'doctypeId' => $this->doctype_id,
+            'doctypeId' => DoctypeResource::collection($this->doctype_id),
+
+            // 'doctypeId' => $this->doctype_id,
             'number' => $this->number,
-            'levelId' => $this->level_id,
+            'levelId' => LevelResource::collection($this->level_id),
+
+            // 'levelId' => $this->level_id,
             'qualification' => $this->qualification,
             'speciality' => $this->speciality,
             'rank' => $this->rank,

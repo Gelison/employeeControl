@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreSubstitutionRequest;
 use App\Http\Requests\UpdateSubstitutionRequest;
+use App\Http\Resources\SubstitutionResource;
 use App\Models\Substitution;
 
 class SubstitutionController extends Controller
@@ -14,7 +15,7 @@ class SubstitutionController extends Controller
      */
     public function index()
     {
-        //
+        return SubstitutionResource::collection(Substitution::all()); //
     }
 
     /**
@@ -22,7 +23,7 @@ class SubstitutionController extends Controller
      */
     public function store(StoreSubstitutionRequest $request)
     {
-        //
+        return new SubstitutionResource(Substitution::create($request->all()));
     }
 
     /**
@@ -30,7 +31,7 @@ class SubstitutionController extends Controller
      */
     public function show(Substitution $substitution)
     {
-        //
+        return new SubstitutionResource($substitution);
     }
 
     /**
@@ -46,6 +47,9 @@ class SubstitutionController extends Controller
      */
     public function destroy(Substitution $substitution)
     {
-        //
+        $substitution->delete();
+        return response()->json([
+            'massage' => 'entiti removed'
+        ]);
     }
 }

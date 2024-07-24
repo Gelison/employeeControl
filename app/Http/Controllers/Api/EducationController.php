@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreEducationRequest;
 use App\Http\Requests\UpdateEducationRequest;
+use App\Http\Resources\EducationResource;
 use App\Models\Education;
 
 class EducationController extends Controller
@@ -14,7 +15,7 @@ class EducationController extends Controller
      */
     public function index()
     {
-        //
+        return EducationResource::collection(Education::all());
     }
 
     /**
@@ -22,7 +23,7 @@ class EducationController extends Controller
      */
     public function store(StoreEducationRequest $request)
     {
-        //
+        return new EducationResource(Education::create($request->all()));
     }
 
     /**
@@ -30,7 +31,7 @@ class EducationController extends Controller
      */
     public function show(Education $education)
     {
-        //
+        return new EducationResource($education);
     }
 
     /**
@@ -46,6 +47,8 @@ class EducationController extends Controller
      */
     public function destroy(Education $education)
     {
-        //
-    }
+        $education->delete();
+        return response()->json([
+            'massage' => 'entiti removed'
+        ]);    }
 }

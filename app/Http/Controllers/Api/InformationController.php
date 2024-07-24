@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreInformationRequest;
 use App\Http\Requests\UpdateInformationRequest;
+use App\Http\Resources\InformationResource;
 use App\Models\Information;
 
 class InformationController extends Controller
@@ -14,15 +15,16 @@ class InformationController extends Controller
      */
     public function index()
     {
-        //
+        return InformationResource::collection(Information::all());
     }
+
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(StoreInformationRequest $request)
     {
-        //
+        return new InformationResource(Information::create($request->all()));
     }
 
     /**
@@ -30,7 +32,7 @@ class InformationController extends Controller
      */
     public function show(Information $information)
     {
-        //
+        return new InformationResource($information);
     }
 
     /**
@@ -46,6 +48,9 @@ class InformationController extends Controller
      */
     public function destroy(Information $information)
     {
-        //
+        $information->delete();
+        return response()->json([
+            'massage' => 'entiti removed'
+        ]);
     }
 }

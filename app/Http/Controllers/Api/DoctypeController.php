@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreDoctypeRequest;
 use App\Http\Requests\UpdateDoctypeRequest;
+use App\Http\Resources\DoctypeResource;
 use App\Models\Doctype;
 
 class DoctypeController extends Controller
@@ -14,7 +15,7 @@ class DoctypeController extends Controller
      */
     public function index()
     {
-        return Doctype::all();
+        return DoctypeResource::collection(Doctype::all()); //
     }
 
     /**
@@ -47,7 +48,7 @@ class DoctypeController extends Controller
      */
     public function destroy(Doctype $doctype)
     {
-  
+
         $doctype->delete();
         return response()->json([
             'massage' => 'entiti removed'

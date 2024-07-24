@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreLevelRequest;
 use App\Http\Requests\UpdateLevelRequest;
+use App\Http\Resources\LevelResource;
 use App\Models\Level;
 
 
@@ -15,7 +16,7 @@ class LevelController extends Controller
      */
     public function index()
     {
-        return Level::all();
+        return LevelResource::collection(Level::all()); //
     }
 
     /**
@@ -32,7 +33,6 @@ class LevelController extends Controller
     public function show(Level $level)
     {
         return $level;
-    
     }
 
     /**

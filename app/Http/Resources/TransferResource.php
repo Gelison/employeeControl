@@ -17,16 +17,18 @@ class TransferResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'informationId'=> $this->information_id,
+            'informationId' => $this->information_id,
             'date' => $this->date,
             'transfers_occasion' => $this->transfers_occasion,
-            'divisionId' => $this->division_id,
+            'divisionId' => DivisionResource::collection($this->division_id),
+
+            // 'divisionId' => $this->division_id,
             'etc_persent' => $this->etc_persent,
             'contract_persent' => $this->contract_persent,
             'contract_beginning' => $this->contract_beginning,
             'contract_ending' => $this->contract_ending,
-            'positionId' => $this->position_id,
-
+            // 'positionId' => $this->position_id,
+            'positionId' => PositionResource::collection($this->position_id),
 
 
             'created' => Carbon::parse($this->created_at)->format('Y-m-d'),

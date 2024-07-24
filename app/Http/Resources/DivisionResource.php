@@ -6,7 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class SubstitutionResource extends JsonResource
+class DivisionResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -17,13 +17,7 @@ class SubstitutionResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'informationId' => $this->information_id,
-            'date' => $this->date,
-            'order_number' => $this->order_number,
-            'substitutions_occasion' => $this->substitutions_occasion,
-            // 'positionId' => $this->position_id,
-            'positionId' => PositionResource::collection($this->position_id),
-
+            'name' => $this->name,
 
             'created' => Carbon::parse($this->created_at)->format('Y-m-d'),
             'updated' => Carbon::parse($this->updated_at)->format('Y-m-d'),

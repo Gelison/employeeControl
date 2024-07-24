@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StorepositionRequest;
+use App\Http\Requests\StorePositionRequest;
 use App\Http\Requests\UpdatepositionRequest;
-use App\Models\position;
+use App\Http\Resources\PositionResource;
+use App\Models\Position;
 
 class PositionController extends Controller
 {
@@ -14,13 +15,13 @@ class PositionController extends Controller
      */
     public function index()
     {
-        return position::all();
+        return PositionResource::collection(Position::all()); //
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorepositionRequest $request)
+    public function store(StorePositionRequest $request)
     {
         return position::create($request->all());
     }
@@ -30,7 +31,7 @@ class PositionController extends Controller
      */
     public function show(position $position)
     {
-        return $position;
+        return new PositionResource ($position);
     }
 
     /**

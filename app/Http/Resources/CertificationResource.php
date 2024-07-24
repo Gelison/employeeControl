@@ -17,14 +17,14 @@ class CertificationResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'informationId'=> $this->information_id,
+            'informationId' => $this->information_id,
             'date' => $this->date,
-            
-
+            'divisionId' => DivisionResource::collection($this->division_id),
             'record_number' => $this->record_number,
-            'divisionId' => $this->division_id,
+            // 'divisionId' => $this->division_id,
             'etc_persent' => $this->etc_persent,
-            'positionId' => $this->position_id,
+            'positionId' => PositionResource::collection($this->position_id),
+            // 'positionId' => $this->position_id,
             'recomendetion' => $this->recomendetion,
 
 
@@ -32,5 +32,6 @@ class CertificationResource extends JsonResource
 
             'created' => Carbon::parse($this->created_at)->format('Y-m-d'),
             'updated' => Carbon::parse($this->updated_at)->format('Y-m-d'),
-        ];    }
+        ];
+    }
 }

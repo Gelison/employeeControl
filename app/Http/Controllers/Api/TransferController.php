@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreTransferRequest;
 use App\Http\Requests\UpdateTransferRequest;
+use App\Http\Resources\TransferResource;
 use App\Models\Transfer;
 
 class TransferController extends Controller
@@ -14,7 +15,7 @@ class TransferController extends Controller
      */
     public function index()
     {
-        //
+        return TransferResource::collection(Transfer::all()); //
     }
 
     /**
@@ -22,7 +23,7 @@ class TransferController extends Controller
      */
     public function store(StoreTransferRequest $request)
     {
-        //
+        return new TransferResource(Transfer::create($request->all()));
     }
 
     /**
@@ -30,7 +31,7 @@ class TransferController extends Controller
      */
     public function show(Transfer $transfer)
     {
-        //
+        return new TransferResource($transfer);
     }
 
     /**
@@ -46,6 +47,9 @@ class TransferController extends Controller
      */
     public function destroy(Transfer $transfer)
     {
-        //
+        $transfer->delete();
+        return response()->json([
+            'massage' => 'entiti removed'
+        ]);
     }
 }

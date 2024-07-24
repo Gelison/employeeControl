@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreDivisionRequest;
 use App\Http\Requests\UpdateDivisionRequest;
+use App\Http\Resources\DivisionResource;
 use App\Models\Division;
 
 class DivisionController extends Controller
@@ -14,7 +15,7 @@ class DivisionController extends Controller
      */
     public function index()
     {
-        return Division::all();
+        return DivisionResource::collection(Division::all()); //
     }
 
     /**
@@ -30,7 +31,7 @@ class DivisionController extends Controller
      */
     public function show(Division $division)
     {
-        return $division;
+        return new DivisionResource($division);
     }
 
     /**
@@ -39,7 +40,8 @@ class DivisionController extends Controller
     public function update(UpdateDivisionRequest $request, Division $division)
     {
         $division->update($request->all());
-        return $division;    }
+        return $division;
+    }
 
     /**
      * Remove the specified resource from storage.
@@ -49,5 +51,6 @@ class DivisionController extends Controller
         $division->delete();
         return response()->json([
             'massage' => 'entiti removed'
-        ]);    }
+        ]);
+    }
 }

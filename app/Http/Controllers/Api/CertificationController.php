@@ -15,7 +15,7 @@ class CertificationController extends Controller
      */
     public function index()
     {
-        return CertificationResource::collection(Certification::with('division','position')->paginate(5));
+        return CertificationResource::collection(Certification::with('division', 'position')->paginate(5));
     }
 
     /**
@@ -23,7 +23,7 @@ class CertificationController extends Controller
      */
     public function store(StoreCertificationRequest $request)
     {
-        return Certification::create($request->all());
+        return new CertificationResource(Certification::create($request->all()));
     }
 
     /**
@@ -31,7 +31,7 @@ class CertificationController extends Controller
      */
     public function show(Certification $certification)
     {
-        return $certification;
+        return new CertificationResource($certification);
     }
 
     /**
