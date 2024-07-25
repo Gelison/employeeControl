@@ -15,7 +15,7 @@ class DivisionController extends Controller
      */
     public function index()
     {
-        return DivisionResource::collection(Division::validated()); //
+        return DivisionResource::collection(Division::all()); //
     }
 
     /**

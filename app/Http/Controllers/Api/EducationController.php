@@ -23,7 +23,7 @@ class EducationController extends Controller
      */
     public function store(StoreEducationRequest $request)
     {
-        return new EducationResource(Education::with('doctype', 'level')->create($request->all()));
+        return new EducationResource(Education::create($request->all()));
     }
 
     /**

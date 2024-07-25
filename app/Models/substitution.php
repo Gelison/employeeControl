@@ -17,7 +17,9 @@ class Substitution extends Model
         'substitutions_occasion',
         'position_id'
     ];
-
+    protected $hidden = [
+        'updated_at'
+    ];
 
 
 

@@ -18,14 +18,17 @@ class Certification extends Model
         'position_id',
         'recomendetion'
     ];
+    protected $hidden = [
+        'updated_at'
+    ];
 
-    public function division(): HasOne
-    {
-        return $this->hasOne(Division::class);
-    }
+    // public function division(): HasOne
+    // {
+    //     return $this->hasOne(Division::class);
+    // }
 
-    public function position(): HasOne
-    {
-        return $this->hasOne(Position::class);
-    }
+    // public function position(): HasOne
+    // {
+    //     return $this->hasOne(Position::class);
+    // }
 }

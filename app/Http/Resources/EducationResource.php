@@ -28,8 +28,8 @@ class EducationResource extends JsonResource
             'education_form' => $this->education_form,
             'institution' => $this->institution,
 
-            // 'created' => Carbon::parse($this->created_at)->format('Y-m-d'),
-            'updated' => Carbon::parse($this->updated_at)->format('Y-m-d'),
+            'created' => Carbon::parse($this->created_at)->format('Y-m-d'),
+            // 'updated' => Carbon::parse($this->updated_at)->format('Y-m-d'),
         ];
     }
 }

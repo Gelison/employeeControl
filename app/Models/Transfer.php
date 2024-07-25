@@ -22,8 +22,7 @@ class Transfer extends Model
         'position_id',
     ];
     protected $hidden = [
-     'created'   ,
-     
+        'updated_at'
     ];
     // public function division(): HasOne
     // {
