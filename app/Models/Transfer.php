@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Transfer extends Model
 {
@@ -20,4 +21,17 @@ class Transfer extends Model
         'contract_ending',
         'position_id',
     ];
+    protected $hidden = [
+     'created'   ,
+     
+    ];
+    // public function division(): HasOne
+    // {
+    //     return $this->hasOne(Division::class);
+    // }
+
+    // public function position(): HasOne
+    // {
+    //     return $this->hasOne(Position::class);
+    // }
 }

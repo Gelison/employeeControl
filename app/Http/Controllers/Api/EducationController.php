@@ -15,7 +15,7 @@ class EducationController extends Controller
      */
     public function index()
     {
-        return EducationResource::collection(Education::all());
+        return EducationResource::collection(Education::paginate(5));
     }
 
     /**
@@ -23,7 +23,7 @@ class EducationController extends Controller
      */
     public function store(StoreEducationRequest $request)
     {
-        return new EducationResource(Education::create($request->all()));
+        return new EducationResource(Education::with('doctype', 'level')->create($request->all()));
     }
 
     /**
@@ -39,8 +39,9 @@ class EducationController extends Controller
      */
     public function update(UpdateEducationRequest $request, Education $education)
     {
-        //
-    }
+        $education->update($request->all());
+        return $education; 
+       }
 
     /**
      * Remove the specified resource from storage.
@@ -50,5 +51,6 @@ class EducationController extends Controller
         $education->delete();
         return response()->json([
             'massage' => 'entiti removed'
-        ]);    }
+        ]);
+    }
 }

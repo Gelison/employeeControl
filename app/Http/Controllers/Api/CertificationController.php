@@ -15,7 +15,7 @@ class CertificationController extends Controller
      */
     public function index()
     {
-        return CertificationResource::collection(Certification::with('division', 'position')->paginate(5));
+        return CertificationResource::collection(Certification::with('division', 'position')->paginate(10));
     }
 
     /**

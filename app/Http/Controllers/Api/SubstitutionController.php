@@ -39,7 +39,8 @@ class SubstitutionController extends Controller
      */
     public function update(UpdateSubstitutionRequest $request, Substitution $substitution)
     {
-        //
+        $substitution->update($request->all());
+        return $substitution; 
     }
 
     /**

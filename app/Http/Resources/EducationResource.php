@@ -18,22 +18,17 @@ class EducationResource extends JsonResource
         return [
             'id' => $this->id,
             'informationId' => $this->information_id,
-
             'date' => $this->date,
-            'doctypeId' => DoctypeResource::collection($this->doctype_id),
-
-            // 'doctypeId' => $this->doctype_id,
+            'doctypeId' => $this->doctype_id,
             'number' => $this->number,
-            'levelId' => LevelResource::collection($this->level_id),
-
-            // 'levelId' => $this->level_id,
+            'levelId' => $this->level_id,
             'qualification' => $this->qualification,
             'speciality' => $this->speciality,
             'rank' => $this->rank,
             'education_form' => $this->education_form,
             'institution' => $this->institution,
 
-            'created' => Carbon::parse($this->created_at)->format('Y-m-d'),
+            // 'created' => Carbon::parse($this->created_at)->format('Y-m-d'),
             'updated' => Carbon::parse($this->updated_at)->format('Y-m-d'),
         ];
     }

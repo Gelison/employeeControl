@@ -21,8 +21,7 @@ class SubstitutionResource extends JsonResource
             'date' => $this->date,
             'order_number' => $this->order_number,
             'substitutions_occasion' => $this->substitutions_occasion,
-            // 'positionId' => $this->position_id,
-            'positionId' => PositionResource::collection($this->position_id),
+            'positionId' => $this->position_id,
 
 
             'created' => Carbon::parse($this->created_at)->format('Y-m-d'),

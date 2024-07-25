@@ -19,12 +19,10 @@ class CertificationResource extends JsonResource
             'id' => $this->id,
             'informationId' => $this->information_id,
             'date' => $this->date,
-            'divisionId' => DivisionResource::collection($this->division_id),
             'record_number' => $this->record_number,
-            // 'divisionId' => $this->division_id,
+            'division' => $this->division,
             'etc_persent' => $this->etc_persent,
-            'positionId' => PositionResource::collection($this->position_id),
-            // 'positionId' => $this->position_id,
+            'position' => $this->position,
             'recomendetion' => $this->recomendetion,
 
 

@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Education extends Model
 {
@@ -12,7 +14,7 @@ class Education extends Model
     protected $fillable = [
         'information_id',
         'date',
-        'dictype_id',
+        'doctype_id',
         'number',
         'level_id',
         'qualification',
@@ -20,6 +22,19 @@ class Education extends Model
         'rank',
         'education_form',
         'institution'
+
     ];
-    
+    protected $hidden = [
+        'created_at',
+
+    ];
+    // public function doctype(): HasOne
+    // {
+    //     return $this->hasOne(Doctype::class);
+    // }
+
+    // public function level(): BelongsTo
+    // {
+    //     return $this->belongsTo(Level::class);
+    // }
 }

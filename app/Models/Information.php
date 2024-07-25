@@ -13,10 +13,13 @@ class Information extends Model
 
     protected $fillable = ['user_id'];
 
-
-    public function user(): BelongsTo{
-        return $this ->belongsTo(User::class);
-    }
+    protected $hidden = [
+        'created_at',
+        'updated_at'
+    ];
+    // public function user(): BelongsTo{
+    //     return $this ->belongsTo(User::class);
+    // }
 
 
     public function education(): HasMany
@@ -38,5 +41,4 @@ class Information extends Model
     {
         return $this->hasMany(Certification::class);
     }
-
 }

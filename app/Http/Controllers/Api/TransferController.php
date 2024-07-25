@@ -39,8 +39,12 @@ class TransferController extends Controller
      */
     public function update(UpdateTransferRequest $request, Transfer $transfer)
     {
-        //
+
+        $transfer->update($request->all());
+        return $transfer;
     }
+
+
 
     /**
      * Remove the specified resource from storage.

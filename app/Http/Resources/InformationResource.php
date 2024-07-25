@@ -18,11 +18,13 @@ class InformationResource extends JsonResource
         return [
             'id' => $this->id,
             'userId' => $this->user_id,
+            'education' => EducationResource::collection($this->education),
+            'substitutions' => SubstitutionResource::collection($this->substitutions),
+            'transfers' => TransferResource::collection($this->transfers),
+            'certifications' => CertificationResource::collection($this->certifications),
 
-
-
-            'created' => Carbon::parse($this->created_at)->format('Y-m-d'),
-            'updated' => Carbon::parse($this->updated_at)->format('Y-m-d'),
+            // 'created' => Carbon::parse($this->created_at)->format('Y-m-d'),
+            // 'updated' => Carbon::parse($this->updated_at)->format('Y-m-d'),
         ];
     }
 }
