@@ -16,17 +16,5 @@ class Position extends Model
         'updated_at'
     ];
 
-    public function transfer(): BelongsTo
-    {
-        return $this->belongsTo(Transfer::class);
-    }
-
-    public function substitution(): BelongsTo
-    {
-        return $this->belongsTo(Substitution::class);
-    }
-    public function certification(): BelongsTo
-    {
-        return $this->belongsTo(Certification::class);
-    }
+    
 }

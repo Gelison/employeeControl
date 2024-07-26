@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Certification extends Model
@@ -22,13 +23,13 @@ class Certification extends Model
         'updated_at'
     ];
 
-    // public function division(): HasOne
-    // {
-    //     return $this->hasOne(Division::class);
-    // }
+    public function division(): BelongsTo
+    {
+        return $this->belongsTo(Division::class);
+    }
 
-    // public function position(): HasOne
-    // {
-    //     return $this->hasOne(Position::class);
-    // }
+    public function position(): BelongsTo
+    {
+        return $this->belongsTo(Position::class);
+    }
 }

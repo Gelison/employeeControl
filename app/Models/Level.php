@@ -16,8 +16,6 @@ class Level extends Model
         'updated_at'
     ];
 
-    // public function user(): BelongsTo{
-    //     return $this ->belongsTo(User::class);
-    // }
+   
 
 }

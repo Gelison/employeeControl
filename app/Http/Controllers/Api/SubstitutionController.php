@@ -15,7 +15,7 @@ class SubstitutionController extends Controller
      */
     public function index()
     {
-        return SubstitutionResource::collection(Substitution::all()); //
+        return SubstitutionResource::collection(Substitution::paginate(5)); //
     }
 
     /**

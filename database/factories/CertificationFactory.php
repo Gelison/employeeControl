@@ -2,6 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Models\Division;
+use App\Models\Information;
+use App\Models\Position;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +20,14 @@ class CertificationFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'information_id' => Information::get()->random_int()->id,
+
+            'date' => $this->faker->dateTimeAD,
+            'record_number'=> $this->faker->randomDigit,
+            'division_id'=> Division::get()->random_int()->id,
+            'position_id' => Position::get()->random_int()->id,
+            'recomendetion'=> fake()->word()
+            
         ];
     }
 }

@@ -15,7 +15,7 @@ class TransferController extends Controller
      */
     public function index()
     {
-        return TransferResource::collection(Transfer::all()); //
+        return TransferResource::collection(Transfer::paginate(5)); //
     }
 
     /**

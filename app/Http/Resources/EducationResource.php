@@ -20,8 +20,15 @@ class EducationResource extends JsonResource
             'informationId' => $this->information_id,
             'date' => $this->date,
             'doctypeId' => $this->doctype_id,
+            'doctypeName' => $this->doctype->name,
+
+
             'number' => $this->number,
+
             'levelId' => $this->level_id,
+            'levelName' => $this->level->name,
+
+
             'qualification' => $this->qualification,
             'speciality' => $this->speciality,
             'rank' => $this->rank,

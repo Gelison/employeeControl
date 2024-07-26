@@ -11,18 +11,11 @@ class Division extends Model
     use HasFactory;
 
     protected $fillable = ['name'];
+    
     protected $hidden = [
         'created_at',
         'updated_at'
     ];
 
-    public function transfer(): BelongsTo
-    {
-        return $this->belongsTo(Transfer::class);
-    }
-
-    public function certification(): BelongsTo
-    {
-        return $this->belongsTo(Certification::class);
-    }
+    
 }

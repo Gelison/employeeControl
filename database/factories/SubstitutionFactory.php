@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Information;
+use App\Models\Position;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +19,11 @@ class SubstitutionFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'information_id' => Information::get()->random_int()->id,
+            'date' => $this->faker->dateTimeAD,
+            'order_number' => $this->faker->randomNumber(1000, false),
+            'substitutions_occasion' => $this->faker->word,
+            'position_id'=> Position::get()->random_int()->id
         ];
     }
 }

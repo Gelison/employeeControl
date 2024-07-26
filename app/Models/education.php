@@ -27,13 +27,13 @@ class Education extends Model
     protected $hidden = [
         'updated_at'
     ];
-    // public function doctype(): HasOne
-    // {
-    //     return $this->hasOne(Doctype::class);
-    // }
+    public function doctype(): BelongsTo
+    {
+        return $this->belongsTo(Doctype::class);
+    }
 
-    // public function level(): BelongsTo
-    // {
-    //     return $this->belongsTo(Level::class);
-    // }
+    public function level(): BelongsTo
+    {
+        return $this->belongsTo(Level::class);
+    }
 }

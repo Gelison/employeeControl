@@ -18,6 +18,8 @@ class InformationResource extends JsonResource
         return [
             'id' => $this->id,
             'userId' => $this->user_id,
+            'userName' => $this->user->name,
+
             'education' => EducationResource::collection($this->education),
             'substitutions' => SubstitutionResource::collection($this->substitutions),
             'transfers' => TransferResource::collection($this->transfers),

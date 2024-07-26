@@ -22,11 +22,16 @@ class TransferResource extends JsonResource
             'transfers_occasion' => $this->transfers_occasion,
 
             'divisionId' => $this->division_id,
+            'divisionName' => $this->division->name,
+
             'etc_persent' => $this->etc_persent,
             'contract_persent' => $this->contract_persent,
             'contract_beginning' => $this->contract_beginning,
             'contract_ending' => $this->contract_ending,
+
+            
             'positionId' => $this->position_id,
+            'positionName' => $this->position->name,
 
 
             'created' => Carbon::parse($this->created_at)->format('Y-m-d'),
