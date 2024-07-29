@@ -2,17 +2,17 @@
 
 namespace Database\Seeders;
 
-use App\Models\Transfer;
+use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class TransferSeeder extends Seeder
+class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Transfer::factory(20)->create();
-    }
+        User::factory()->count(10)->create();
+    }   
 }

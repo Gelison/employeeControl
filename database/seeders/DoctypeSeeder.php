@@ -13,6 +13,6 @@ class DoctypeSeeder extends Seeder
      */
     public function run(): void
     {
-        Doctype::factory()->count(10)->create();
+        Doctype::factory(10)->create();
     }
 }

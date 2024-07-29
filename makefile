@@ -5,6 +5,10 @@ down:
 
 cli:
 	docker compose exec php-cli bash
+
+fpm:
+	docker compose exec php-fpm bash
+	
 npm-install:
 	docker compose exec node npm install
 npm-build:

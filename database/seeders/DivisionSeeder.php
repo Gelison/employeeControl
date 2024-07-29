@@ -13,6 +13,6 @@ class DivisionSeeder extends Seeder
      */
     public function run(): void
     {
-        Division::factory()->count(10)->create();
+        Division::factory(10)->create();
     }
 }

@@ -19,11 +19,11 @@ class SubstitutionFactory extends Factory
     public function definition(): array
     {
         return [
-            'information_id' => Information::get()->random_int()->id,
+            'information_id' =>$this->faker->numberBetween(1,10),
             'date' => $this->faker->dateTimeAD,
-            'order_number' => $this->faker->randomNumber(1000, false),
+            'order_number' =>$this->faker->numberBetween(1000,2000),
             'substitutions_occasion' => $this->faker->word,
-            'position_id'=> Position::get()->random_int()->id
+            'position_id'=>$this->faker->numberBetween(1,10),
         ];
     }
 }

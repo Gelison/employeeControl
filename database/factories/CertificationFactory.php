@@ -20,14 +20,14 @@ class CertificationFactory extends Factory
     public function definition(): array
     {
         return [
-            'information_id' => Information::get()->random_int()->id,
+            'information_id' => Information::get()->random()->id,
 
             'date' => $this->faker->dateTimeAD,
-            'record_number'=> $this->faker->randomDigit,
-            'division_id'=> Division::get()->random_int()->id,
-            'position_id' => Position::get()->random_int()->id,
-            'recomendetion'=> fake()->word()
-            
+            'record_number' => $this->faker->randomDigit,
+            'division_id' => $this->faker->numberBetween(1, 10),
+            'position_id' => $this->faker->numberBetween(1, 10),
+            'recomendetion' => fake()->word()
+
         ];
     }
 }

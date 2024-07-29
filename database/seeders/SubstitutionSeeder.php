@@ -13,6 +13,6 @@ class SubstitutionSeeder extends Seeder
      */
     public function run(): void
     {
-        Substitution::factory()->count(10)->create();
+        Substitution::factory(20)->create();
     }
 }

@@ -20,14 +20,15 @@ class TransferFactory extends Factory
     public function definition(): array
     {
         return [
-            'information_id' => Information::get()->random_int()->id,
+            'information_id' => $this->faker->numberBetween(1, 10),
             'date' => $this->faker->dateTimeAD,
-            'division_id'=> Division::get()->random_int()->id,
-            'etc_persent'=> $this->faker->randomDigit,             
-            'contract_persent'=> $this->faker->randomDigit ,            
-            'contract_beginning'=> $this->faker->dateTimeAD,
-            'contract_ending'=> $this->faker->dateTimeAD,
-            'position_id' => Position::get()->random_int()->id,
+            'transfers_occasion'=> $this->faker->word,
+            'division_id' => $this->faker->numberBetween(1, 10),
+            'etc_persent' => $this->faker->numberBetween(1, 20),
+            'contract_persent' => $this->faker->numberBetween(1, 50),
+            'contract_beginning' => $this->faker->dateTimeAD,
+            'contract_ending' => $this->faker->dateTimeAD,
+            'position_id' => $this->faker->numberBetween(1, 10),
         ];
     }
 }

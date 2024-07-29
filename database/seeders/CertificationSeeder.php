@@ -13,6 +13,6 @@ class CertificationSeeder extends Seeder
      */
     public function run(): void
     {
-        Certification::factory()->count(10)->create();
+        Certification::factory(20)->create();
     }
 }

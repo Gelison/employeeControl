@@ -20,11 +20,11 @@ class EducationFactory extends Factory
     public function definition(): array
     {
         return [
-            'information_id' => Information::get()->random_int()->id,
+            'information_id' => $this->faker->numberBetween(1,10),
             'date' => $this->faker->dateTimeAD,
-            'doctype_id' => Doctype::get()->random_int()->id,
-            'number' => $this->faker->randomNumber(1000, false),
-            'level_id' => Level::get()->random_int()->id,
+            'doctype_id' =>$this->faker->numberBetween(1,10),
+            'number' => random_int(1000, 2000),
+            'level_id' =>$this->faker->numberBetween(1,10),
             'qualification' => $this->faker->word,
             'speciality' => $this->faker->word,
             'rank' => $this->faker->word,
