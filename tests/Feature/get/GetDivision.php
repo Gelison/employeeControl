@@ -1,14 +1,17 @@
 <?php
 
-namespace Tests\Feature;
-
-// use Illuminate\Foundation\Testing\RefreshDatabase;
+namespace Tests\Feature\Get;
 
 use App\Models\User;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
-class ExampleTest extends TestCase
+class GetDivision extends TestCase
 {
+    /**
+     * A basic feature test example.
+     */
     /** @test */
 
     public function test_the_application_returns_a_successful_response(): void

@@ -40,8 +40,8 @@ class InformationController extends Controller
      */
     public function update(UpdateInformationRequest $request, Information $information)
     {
-        //
-    }
+        $information->update($request->all());
+        return $information;    }
 
     /**
      * Remove the specified resource from storage.
