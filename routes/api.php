@@ -12,6 +12,7 @@ use App\Http\Controllers\Api\LevelController;
 use App\Http\Controllers\Api\PositionController;
 use App\Http\Controllers\Api\DivisionController;
 use App\Http\Controllers\Api\InformationController;
+use App\Http\Controllers\Api\RoleController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\ApiUserController;
 use App\Models\Information;
@@ -39,6 +40,9 @@ Route::middleware(['throttle:api'])->group(function () {
 
 
 Route::middleware(['throttle:api', 'auth:sanctum'])->group(function () {
+    Route::get('roles', [RoleController::class, 'index']);
+
+
     Route::apiResources([
         'user' => UserController::class,
         'information' => InformationController::class,

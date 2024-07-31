@@ -4,6 +4,7 @@ namespace App\Providers;
 
 // use Illuminate\Support\Facades\Gate;
 
+use App\Models\User;
 use Illuminate\Auth\Access\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
@@ -23,6 +24,15 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        $this->registerPolicies();
+
+        // Gate::before(function (?User $user) {
+        //     if ($user->role == 'admin') return true;
+        //     return false;
+        // });
+
+        // Gate::define('view-protected-paet', function (User $user) {
+        //     return $user->name == 'User2';
+        // });
     }
 }

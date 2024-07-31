@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
 
 
 
-            SubstitutionSeeder::class,          
+            SubstitutionSeeder::class,
             TransferSeeder::class,
             CertificationSeeder::class,
             EducationSeeder::class,

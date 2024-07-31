@@ -15,6 +15,8 @@ class InformationController extends Controller
      */
     public function index()
     {
+        return response()->json([
+            'massage' => 'route not available']);
         // return InformationResource::collection(Information::all());
     }
 
