@@ -40,7 +40,9 @@ Route::middleware(['throttle:api'])->group(function () {
 
 
 Route::middleware(['throttle:api', 'auth:sanctum'])->group(function () {
-    Route::get('roles', [RoleController::class, 'index']);
+    Route::get('roles', [RoleController::class, 'roleindex']);
+    Route::get('roleInfo', [RoleController::class, 'roleinfoindex']);
+
 
 
     Route::apiResources([

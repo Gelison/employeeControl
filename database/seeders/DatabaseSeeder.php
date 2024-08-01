@@ -16,12 +16,22 @@ class DatabaseSeeder extends Seeder
     {
 
         $this->call([
+            CreateRoleSeeder::class,
+            CreateUserRoleSeeder::class,
+
+            CreateSuperUserSeeder::class,
+
             UserSeeder::class,
+
+
+            CreateRoleInfoSeeder::class,
             DoctypeSeeder::class,
             LevelSeeder::class,
 
             DivisionSeeder::class,
             PositionSeeder::class,
+            CreateInformationAdminSeeder::class,
+
             InformationSeeder::class,
 
 

@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class RoleInfo extends Model
 {
     use HasFactory;
-    
+
 
     protected $fillable = ['user_id', 'role_id'];
 
@@ -17,10 +17,15 @@ class RoleInfo extends Model
         'created_at',
         'updated_at'
     ];
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
+
+
     public function role(): BelongsTo
     {
         return $this->belongsTo(Role::class);
     }
-    
 }
-

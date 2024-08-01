@@ -18,7 +18,7 @@ class InformationFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id'=>$this->faker->unique()->numberBetween(1,10),
+            'user_id'=>$this->faker->unique()->numberBetween(2,11),
 
         ];
     }

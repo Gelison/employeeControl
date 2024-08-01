@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Models\Role;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -18,10 +19,10 @@ class RoleInfoResource extends JsonResource
             'id' => $this->id,
             'userId' => $this->user_id,
             'userName' => $this->user->name,
-            'roleId' => RoleResource::collection($this->role->id),
 
-            // 'roleId' => $this->role_id,
+            'roleId' => $this->role_id,
             'roleName' => $this->role->name,
+
 
 
         ];
