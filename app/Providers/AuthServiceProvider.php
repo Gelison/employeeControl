@@ -4,6 +4,10 @@ namespace App\Providers;
 
 // use Illuminate\Support\Facades\Gate;
 
+use App\Http\Controllers\Api\DivisionController;
+use App\Http\Controllers\Api\DoctypeController;
+use App\Http\Controllers\Api\LevelController;
+use App\Http\Controllers\Api\PositionController;
 use App\Models\Division;
 use App\Models\Doctype;
 use App\Models\Level;
@@ -24,10 +28,10 @@ class AuthServiceProvider extends ServiceProvider
      * @var array<class-string, class-string>
      */
     protected $policies = [
-        Level::class => LevelPolicy::class,
-        Division::class=>DivisionPolicy::class,
-        Doctype::class =>DoctypePolicy::class,
-        Position::class=>PositionPolicy::class,
+        LevelController::class => LevelPolicy::class,
+        DivisionController::class=>DivisionPolicy::class,
+        DoctypeController::class =>DoctypePolicy::class,
+        PositionController::class=>PositionPolicy::class,
     ];
 
     /**

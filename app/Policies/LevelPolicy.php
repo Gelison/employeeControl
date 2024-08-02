@@ -4,7 +4,6 @@ namespace App\Policies;
 
 use App\Models\Level;
 use App\Models\User;
-use Illuminate\Auth\Access\Response;
 
 class LevelPolicy
 {
@@ -12,7 +11,14 @@ class LevelPolicy
      * Determine whether the user can view any models.
      */
     public function viewAny(User $user): bool
+
+
     {
+        // return $user->name == 'Admin';
+
+        return false;
+        // return $user->hasAnyRole($roles) == 'admin';
+
     }
 
     /**
@@ -20,6 +26,7 @@ class LevelPolicy
      */
     public function view(User $user, Level $level): bool
     {
+        return true;
     }
 
     /**
@@ -27,7 +34,7 @@ class LevelPolicy
      */
     public function create(User $user): bool
     {
-        return $user->role === 'admin';
+        // return $user->name == 'Admin';
     }
 
     /**
@@ -35,7 +42,7 @@ class LevelPolicy
      */
     public function update(User $user, Level $level): bool
     {
-        //
+        // return $user->id == $user->isAdmin();
     }
 
     /**
@@ -43,7 +50,7 @@ class LevelPolicy
      */
     public function delete(User $user, Level $level): bool
     {
-        //
+        // return $user->id == $user->isAdmin();
     }
 
     /**
@@ -51,7 +58,7 @@ class LevelPolicy
      */
     public function restore(User $user, Level $level): bool
     {
-        //
+        // return $user->id == $user->isAdmin();
     }
 
     /**
@@ -59,6 +66,6 @@ class LevelPolicy
      */
     public function forceDelete(User $user, Level $level): bool
     {
-        //
+        // return $user->id == $user->isAdmin();
     }
 }

@@ -16,6 +16,8 @@ class LevelController extends Controller
      */
     public function index()
     {
+        $this->authorize('viewAny');
+
         return LevelResource::collection(Level::all()); //
     }
 
@@ -24,6 +26,8 @@ class LevelController extends Controller
      */
     public function store(StoreLevelRequest $request)
     {
+        $this->authorize('create');
+
         return Level::create($request->all());
     }
 
@@ -32,7 +36,9 @@ class LevelController extends Controller
      */
     public function show(Level $level)
     {
-        return $level;
+        $this->authorize('view');
+
+        return new LevelResource($level);
     }
 
     /**
@@ -40,6 +46,8 @@ class LevelController extends Controller
      */
     public function update(UpdateLevelRequest $request, Level $level)
     {
+        $this->authorize('update');
+
         $level->update($request->all());
         return $level;
     }
@@ -49,6 +57,8 @@ class LevelController extends Controller
      */
     public function destroy(Level $level)
     {
+        $this->authorize('forceDelete');
+
         $level->delete();
         return response()->json([
             'massage' => 'entiti removed'

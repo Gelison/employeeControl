@@ -2,14 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
@@ -50,6 +47,23 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
+
+
+    
+    // public function hasAnyRole($roles)
+    // {
+    //     if (!is_array($roles)) {
+    //         $roles = [$roles];
+    //     }
+
+    //     foreach ($roles as $role) {
+    //         if (strtolower($role) === strtolower($this->roleInfo->role->name)) {
+    //             return true;
+    //         }
+    //     }
+
+    //     return false;
+    // }
 
     public function information(): HasOne
     {

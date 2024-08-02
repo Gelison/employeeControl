@@ -14,7 +14,6 @@ use App\Http\Controllers\Api\DivisionController;
 use App\Http\Controllers\Api\InformationController;
 use App\Http\Controllers\Api\RoleController;
 use App\Http\Controllers\Api\UserController;
-use App\Http\Controllers\ApiUserController;
 use App\Models\Information;
 
 /*

@@ -13,6 +13,10 @@ class AuthController extends Controller
     public function register(StoreUserRequest $request)
     {
         return User::create($request->all());
+
+        
+
+        
     }
 
     public function login(LoginUserRequest $request)
