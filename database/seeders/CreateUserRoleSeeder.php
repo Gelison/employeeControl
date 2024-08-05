@@ -15,7 +15,7 @@ class CreateUserRoleSeeder extends Seeder
     public function run(): void
     {
         $userRole = Role::create([
-            'name' => 'Admin',
+            'name' => 'User',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
 

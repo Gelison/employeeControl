@@ -7,7 +7,7 @@ use App\Http\Requests\StoreLevelRequest;
 use App\Http\Requests\UpdateLevelRequest;
 use App\Http\Resources\LevelResource;
 use App\Models\Level;
-
+use App\Models\User;
 
 class LevelController extends Controller
 {
@@ -16,7 +16,7 @@ class LevelController extends Controller
      */
     public function index()
     {
-        $this->authorize('viewAny');
+        // $this->authorize('viewAny', );
 
         return LevelResource::collection(Level::all()); //
     }
@@ -24,9 +24,9 @@ class LevelController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreLevelRequest $request)
+    public function store(StoreLevelRequest $request, $level)
     {
-        $this->authorize('create');
+        $this->authorize('create', $level);
 
         return Level::create($request->all());
     }
@@ -36,7 +36,7 @@ class LevelController extends Controller
      */
     public function show(Level $level)
     {
-        $this->authorize('view');
+        $this->authorize('view', $level);
 
         return new LevelResource($level);
     }
@@ -46,7 +46,7 @@ class LevelController extends Controller
      */
     public function update(UpdateLevelRequest $request, Level $level)
     {
-        $this->authorize('update');
+        $this->authorize('update', $level);
 
         $level->update($request->all());
         return $level;
@@ -57,7 +57,7 @@ class LevelController extends Controller
      */
     public function destroy(Level $level)
     {
-        $this->authorize('forceDelete');
+        $this->authorize('forceDelete', $level);
 
         $level->delete();
         return response()->json([
