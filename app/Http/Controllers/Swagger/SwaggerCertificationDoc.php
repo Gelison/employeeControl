@@ -5,16 +5,17 @@ namespace App\Http\Controllers\Swagger;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+
 /**
  * @OA\Post(
- *     path="/api/doctype/",
- *     summary="post doctype\создание уровней образования ",
- *     tags={"Doctype"},
+ *     path="/api/certification/",
+ *     summary="post certification\создание certification ",
+ *     tags={"Certification"},
  *     @OA\RequestBody(
  *          @OA\JsonContent(
  *              allOf={
  *                  @OA\Schema(
- *                     @OA\Property(property="name", type="string", example="Сведетельство"), 
+ *                     @OA\Property(property="name", type="string", example="программист"), 
  *                  )
  *              }
  *          )
@@ -24,7 +25,7 @@ use Illuminate\Http\Request;
  *         description="OK",
  *         @OA\JsonContent(
  *              @OA\Property(property="id", type="integer", example="1"),
- *              @OA\Property(property="name", type="string", example="Сведетельство"),
+ *              @OA\Property(property="name", type="string", example="программист"),
  *   
  *          ),
  *                   
@@ -33,9 +34,9 @@ use Illuminate\Http\Request;
  * 
  * 
  * @OA\Get(
- *     path="/api/doctype/",
- *     summary="get doctype \ список уровней образования ",
- *     tags={"Doctype"},
+ *     path="/api/certification/",
+ *     summary="get certification \  ",
+ *     tags={"Certification"},
  *    
  *     
  *     @OA\Response(
@@ -44,7 +45,7 @@ use Illuminate\Http\Request;
  *         @OA\JsonContent(
  *            @OA\Property(property = "data", type = "array", @OA\Items(
  *              @OA\Property(property="id", type="integer", example="1"),
- *              @OA\Property(property="name", type="string", example="Сведетельство"),
+ *              @OA\Property(property="name", type="string", example="программист"),
  *            )),
  *             
  *              
@@ -54,13 +55,13 @@ use Illuminate\Http\Request;
  * ),
  * 
  * @OA\Get(
- *     path="/api/doctype/{doctype}",
- *     summary="get doctype\ получение одной записи уровня образования ",
- *     tags={"Doctype"},
+ *     path="/api/certification/{certification}",
+ *     summary="get certification\ получение одной записи уровня образования ",
+ *     tags={"Certification"},
  *      @OA\Parameter(
- *         description="doctype ID \ id уровня",
+ *         description="certification ID \ id уровня",
  *         in="path",
- *         name="doctype",
+ *         name="certification",
  *         required=true,
  *         example=1
  *     ),
@@ -70,7 +71,7 @@ use Illuminate\Http\Request;
  *         @OA\JsonContent(
  *            @OA\Property(property = "data", type = "array", @OA\Items(
  *              @OA\Property(property="id", type="integer", example="1"),
- *              @OA\Property(property="name", type="string", example="Сведетельство"),
+ *              @OA\Property(property="name", type="string", example="программист"),
  *            )),
  *             
  *              
@@ -81,13 +82,13 @@ use Illuminate\Http\Request;
  * ),
  * 
  * @OA\Patch(
- *     path="/api/doctype/{doctype}",
- *     summary="patch doctype\ обновление ",
- *     tags={"Doctype"},
+ *     path="/api/certification/{certification}",
+ *     summary="patch certification\ обновление ",
+ *     tags={"Certification"},
  *      @OA\Parameter(
- *         description="doctype ID \ id уровня",
+ *         description="certification ID \ id уровня",
  *         in="path",
- *         name="doctype",
+ *         name="certification",
  *         required=true,
  *         example=2
  *     ),
@@ -95,7 +96,7 @@ use Illuminate\Http\Request;
  *          @OA\JsonContent(
  *              allOf={
  *                  @OA\Schema(
- *                     @OA\Property(property="name", type="string", example="Сведетельство"), 
+ *                     @OA\Property(property="name", type="string", example="программист"), 
  *                  )
  *              }
  *          )
@@ -106,7 +107,7 @@ use Illuminate\Http\Request;
  *         @OA\JsonContent(
  *            @OA\Property(property = "data", type = "array", @OA\Items(
  *              @OA\Property(property="id", type="integer", example="1"),
- *              @OA\Property(property="name", type="string", example="Сведетельство"),
+ *              @OA\Property(property="name", type="string", example="программист"),
  *            )),
  *             
  *              
@@ -117,14 +118,14 @@ use Illuminate\Http\Request;
  * ),
  * 
  * @OA\Delete(
- *     path="/api/doctype/{doctype}",
- *     summary="delete doctype \ удалене уровней образования ",
- *     tags={"Doctype"},
+ *     path="/api/certification/{certification}",
+ *     summary="delete certification \ удаление certification ",
+ *     tags={"Certification"},
  * 
  *     @OA\Parameter(
  *         description="удаление",
  *         in="path",
- *         name="doctype",
+ *         name="level",
  *         required=true,
  *         example=1,
  *     ),
@@ -137,14 +138,15 @@ use Illuminate\Http\Request;
  *             
  *              
  *          ),
- *                   
+ *
  *     ),
  * ),
  * 
  * 
  */
 
-class SwaggerDoctypeDoc extends Controller
+
+class SwaggerCertificationDoc extends Controller
 {
     //
 }

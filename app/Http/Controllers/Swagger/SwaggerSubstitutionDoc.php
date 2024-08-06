@@ -7,14 +7,14 @@ use Illuminate\Http\Request;
 
 /**
  * @OA\Post(
- *     path="/api/doctype/",
- *     summary="post doctype\создание уровней образования ",
- *     tags={"Doctype"},
+ *     path="/api/substitution/",
+ *     summary="post substitution\создание substitution ",
+ *     tags={"Substitution"},
  *     @OA\RequestBody(
  *          @OA\JsonContent(
  *              allOf={
  *                  @OA\Schema(
- *                     @OA\Property(property="name", type="string", example="Сведетельство"), 
+ *                     @OA\Property(property="name", type="string", example="программист"), 
  *                  )
  *              }
  *          )
@@ -24,7 +24,7 @@ use Illuminate\Http\Request;
  *         description="OK",
  *         @OA\JsonContent(
  *              @OA\Property(property="id", type="integer", example="1"),
- *              @OA\Property(property="name", type="string", example="Сведетельство"),
+ *              @OA\Property(property="name", type="string", example="программист"),
  *   
  *          ),
  *                   
@@ -33,9 +33,9 @@ use Illuminate\Http\Request;
  * 
  * 
  * @OA\Get(
- *     path="/api/doctype/",
- *     summary="get doctype \ список уровней образования ",
- *     tags={"Doctype"},
+ *     path="/api/substitution/",
+ *     summary="get substitution \  ",
+ *     tags={"Substitution"},
  *    
  *     
  *     @OA\Response(
@@ -44,7 +44,7 @@ use Illuminate\Http\Request;
  *         @OA\JsonContent(
  *            @OA\Property(property = "data", type = "array", @OA\Items(
  *              @OA\Property(property="id", type="integer", example="1"),
- *              @OA\Property(property="name", type="string", example="Сведетельство"),
+ *              @OA\Property(property="name", type="string", example="программист"),
  *            )),
  *             
  *              
@@ -54,13 +54,13 @@ use Illuminate\Http\Request;
  * ),
  * 
  * @OA\Get(
- *     path="/api/doctype/{doctype}",
- *     summary="get doctype\ получение одной записи уровня образования ",
- *     tags={"Doctype"},
+ *     path="/api/substitution/{substitution}",
+ *     summary="get substitution\  ",
+ *     tags={"Substitution"},
  *      @OA\Parameter(
- *         description="doctype ID \ id уровня",
+ *         description="position ID \ id уровня",
  *         in="path",
- *         name="doctype",
+ *         name="position",
  *         required=true,
  *         example=1
  *     ),
@@ -70,7 +70,7 @@ use Illuminate\Http\Request;
  *         @OA\JsonContent(
  *            @OA\Property(property = "data", type = "array", @OA\Items(
  *              @OA\Property(property="id", type="integer", example="1"),
- *              @OA\Property(property="name", type="string", example="Сведетельство"),
+ *              @OA\Property(property="name", type="string", example="программист"),
  *            )),
  *             
  *              
@@ -81,13 +81,13 @@ use Illuminate\Http\Request;
  * ),
  * 
  * @OA\Patch(
- *     path="/api/doctype/{doctype}",
- *     summary="patch doctype\ обновление ",
- *     tags={"Doctype"},
+ *     path="/api/substitution/{substitution}",
+ *     summary="patch substitution\ обновление ",
+ *     tags={"Substitution"},
  *      @OA\Parameter(
- *         description="doctype ID \ id уровня",
+ *         description="substitution ID \ id уровня",
  *         in="path",
- *         name="doctype",
+ *         name="substitution",
  *         required=true,
  *         example=2
  *     ),
@@ -95,7 +95,7 @@ use Illuminate\Http\Request;
  *          @OA\JsonContent(
  *              allOf={
  *                  @OA\Schema(
- *                     @OA\Property(property="name", type="string", example="Сведетельство"), 
+ *                     @OA\Property(property="name", type="string", example="программист"), 
  *                  )
  *              }
  *          )
@@ -106,7 +106,7 @@ use Illuminate\Http\Request;
  *         @OA\JsonContent(
  *            @OA\Property(property = "data", type = "array", @OA\Items(
  *              @OA\Property(property="id", type="integer", example="1"),
- *              @OA\Property(property="name", type="string", example="Сведетельство"),
+ *              @OA\Property(property="name", type="string", example="программист"),
  *            )),
  *             
  *              
@@ -117,14 +117,14 @@ use Illuminate\Http\Request;
  * ),
  * 
  * @OA\Delete(
- *     path="/api/doctype/{doctype}",
- *     summary="delete doctype \ удалене уровней образования ",
- *     tags={"Doctype"},
+ *     path="/api/substitution/{substitution}",
+ *     summary="delete substitution \ удаление substitution ",
+ *     tags={"Substitution"},
  * 
  *     @OA\Parameter(
  *         description="удаление",
  *         in="path",
- *         name="doctype",
+ *         name="level",
  *         required=true,
  *         example=1,
  *     ),
@@ -137,14 +137,15 @@ use Illuminate\Http\Request;
  *             
  *              
  *          ),
- *                   
+ *
  *     ),
  * ),
  * 
  * 
  */
 
-class SwaggerDoctypeDoc extends Controller
+
+class SwaggerSubstitutionDoc extends Controller
 {
     //
 }

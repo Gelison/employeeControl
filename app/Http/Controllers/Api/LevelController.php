@@ -24,9 +24,9 @@ class LevelController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreLevelRequest $request, $level)
+    public function store(StoreLevelRequest $request )
     {
-        $this->authorize('create', $level);
+        
 
         return Level::create($request->all());
     }
@@ -36,7 +36,7 @@ class LevelController extends Controller
      */
     public function show(Level $level)
     {
-        $this->authorize('view', $level);
+        // $this->authorize('view', $level);
 
         return new LevelResource($level);
     }

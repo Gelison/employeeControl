@@ -4,20 +4,25 @@ namespace App\Providers;
 
 // use Illuminate\Support\Facades\Gate;
 
-use App\Http\Controllers\Api\DivisionController;
-use App\Http\Controllers\Api\DoctypeController;
-use App\Http\Controllers\Api\LevelController;
-use App\Http\Controllers\Api\PositionController;
+
+use App\Models\Certification;
 use App\Models\Division;
 use App\Models\Doctype;
+use App\Models\Education;
 use App\Models\Level;
 use App\Models\Position;
+use App\Models\Substitution;
+use App\Models\Transfer;
 use App\Models\User;
+use App\Policies\CertificationPolicy;
 use App\Policies\DivisionPolicy;
 use App\Policies\DoctypePolicy;
+use App\Policies\EducationPolicy;
 use App\Policies\LevelPolicy;
 use App\Policies\PositionPolicy;
-use Illuminate\Auth\Access\Gate;
+use App\Policies\SubstitutionPolicy;
+use App\Policies\TransferPolicy;
+use App\Policies\UserPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
 class AuthServiceProvider extends ServiceProvider
@@ -29,9 +34,16 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         Level::class => LevelPolicy::class,
-        // DivisionController::class=>DivisionPolicy::class,
-        // DoctypeController::class =>DoctypePolicy::class,
-        // PositionController::class=>PositionPolicy::class,
+        Division::class=>DivisionPolicy::class,
+        Doctype::class =>DoctypePolicy::class,
+        Position::class=>PositionPolicy::class,
+        Certification::class=>CertificationPolicy::class,
+        Education::class=>EducationPolicy::class,
+        Substitution::class=>SubstitutionPolicy::class,
+        Transfer::class=>TransferPolicy::class,
+        User::class=>UserPolicy::class,
+
+
     ];
 
     /**

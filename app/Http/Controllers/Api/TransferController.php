@@ -15,7 +15,11 @@ class TransferController extends Controller
      */
     public function index()
     {
-        return TransferResource::collection(Transfer::paginate(5)); //
+
+        return response()->json([
+            'massage' => 'route not available'
+        ]);
+        // return TransferResource::collection(Transfer::paginate(5)); //
     }
 
     /**
@@ -31,7 +35,11 @@ class TransferController extends Controller
      */
     public function show(Transfer $transfer)
     {
-        return new TransferResource($transfer);
+        return response()->json([
+            'massage' => 'route not available'
+        ]);
+
+        // return new TransferResource($transfer);
     }
 
     /**

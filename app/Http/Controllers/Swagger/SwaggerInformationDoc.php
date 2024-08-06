@@ -7,14 +7,14 @@ use Illuminate\Http\Request;
 
 /**
  * @OA\Post(
- *     path="/api/doctype/",
- *     summary="post doctype\создание уровней образования ",
- *     tags={"Doctype"},
+ *     path="/api/information/",
+ *     summary="post information\создание information ",
+ *     tags={"Information"},
  *     @OA\RequestBody(
  *          @OA\JsonContent(
  *              allOf={
  *                  @OA\Schema(
- *                     @OA\Property(property="name", type="string", example="Сведетельство"), 
+ *                     @OA\Property(property="name", type="string", example="программист"), 
  *                  )
  *              }
  *          )
@@ -24,7 +24,7 @@ use Illuminate\Http\Request;
  *         description="OK",
  *         @OA\JsonContent(
  *              @OA\Property(property="id", type="integer", example="1"),
- *              @OA\Property(property="name", type="string", example="Сведетельство"),
+ *              @OA\Property(property="name", type="string", example="программист"),
  *   
  *          ),
  *                   
@@ -33,18 +33,16 @@ use Illuminate\Http\Request;
  * 
  * 
  * @OA\Get(
- *     path="/api/doctype/",
- *     summary="get doctype \ список уровней образования ",
- *     tags={"Doctype"},
+ *     path="/api/information/",
+ *     summary="get information \  ",
+ *     tags={"Information"},
  *    
  *     
  *     @OA\Response(
  *         response=200,
  *         description="OK",
  *         @OA\JsonContent(
- *            @OA\Property(property = "data", type = "array", @OA\Items(
- *              @OA\Property(property="id", type="integer", example="1"),
- *              @OA\Property(property="name", type="string", example="Сведетельство"),
+ *            @OA\Property(property = "massage", type = "string", example="entiti removed"),
  *            )),
  *             
  *              
@@ -54,23 +52,15 @@ use Illuminate\Http\Request;
  * ),
  * 
  * @OA\Get(
- *     path="/api/doctype/{doctype}",
- *     summary="get doctype\ получение одной записи уровня образования ",
- *     tags={"Doctype"},
- *      @OA\Parameter(
- *         description="doctype ID \ id уровня",
- *         in="path",
- *         name="doctype",
- *         required=true,
- *         example=1
- *     ),
+ *     path="/api/information/{information}",
+ *     summary="get information\  ",
+ *     tags={"Information"},
+ *      
  *     @OA\Response(
  *         response=200,
  *         description="OK",
  *         @OA\JsonContent(
- *            @OA\Property(property = "data", type = "array", @OA\Items(
- *              @OA\Property(property="id", type="integer", example="1"),
- *              @OA\Property(property="name", type="string", example="Сведетельство"),
+ *            @OA\Property(property = "massage", type = "string", example="entiti removed"),
  *            )),
  *             
  *              
@@ -81,13 +71,13 @@ use Illuminate\Http\Request;
  * ),
  * 
  * @OA\Patch(
- *     path="/api/doctype/{doctype}",
- *     summary="patch doctype\ обновление ",
- *     tags={"Doctype"},
+ *     path="/api/information/{information}",
+ *     summary="patch information\ обновление ",
+ *     tags={"Information"},
  *      @OA\Parameter(
- *         description="doctype ID \ id уровня",
+ *         description="information ID \ id уровня",
  *         in="path",
- *         name="doctype",
+ *         name="information",
  *         required=true,
  *         example=2
  *     ),
@@ -95,7 +85,7 @@ use Illuminate\Http\Request;
  *          @OA\JsonContent(
  *              allOf={
  *                  @OA\Schema(
- *                     @OA\Property(property="name", type="string", example="Сведетельство"), 
+ *                     @OA\Property(property="name", type="string", example="программист"), 
  *                  )
  *              }
  *          )
@@ -106,7 +96,7 @@ use Illuminate\Http\Request;
  *         @OA\JsonContent(
  *            @OA\Property(property = "data", type = "array", @OA\Items(
  *              @OA\Property(property="id", type="integer", example="1"),
- *              @OA\Property(property="name", type="string", example="Сведетельство"),
+ *              @OA\Property(property="name", type="string", example="программист"),
  *            )),
  *             
  *              
@@ -117,14 +107,14 @@ use Illuminate\Http\Request;
  * ),
  * 
  * @OA\Delete(
- *     path="/api/doctype/{doctype}",
- *     summary="delete doctype \ удалене уровней образования ",
- *     tags={"Doctype"},
+ *     path="/api/information/{information}",
+ *     summary="delete information \ удаление information ",
+ *     tags={"Information"},
  * 
  *     @OA\Parameter(
  *         description="удаление",
  *         in="path",
- *         name="doctype",
+ *         name="level",
  *         required=true,
  *         example=1,
  *     ),
@@ -137,14 +127,18 @@ use Illuminate\Http\Request;
  *             
  *              
  *          ),
- *                   
+ *
  *     ),
  * ),
  * 
  * 
  */
 
-class SwaggerDoctypeDoc extends Controller
+
+
+
+
+class SwaggerInformationDoc extends Controller
 {
     //
 }

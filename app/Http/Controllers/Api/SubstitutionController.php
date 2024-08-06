@@ -15,7 +15,10 @@ class SubstitutionController extends Controller
      */
     public function index()
     {
-        return SubstitutionResource::collection(Substitution::paginate(5)); //
+        return response()->json([
+            'massage' => 'route not available'
+        ]);
+        // return SubstitutionResource::collection(Substitution::paginate(5)); //
     }
 
     /**
@@ -31,7 +34,10 @@ class SubstitutionController extends Controller
      */
     public function show(Substitution $substitution)
     {
-        return new SubstitutionResource($substitution);
+       
+        return response()->json([
+            'massage' => 'route not available']);
+        // return new SubstitutionResource($substitution);
     }
 
     /**
@@ -40,7 +46,7 @@ class SubstitutionController extends Controller
     public function update(UpdateSubstitutionRequest $request, Substitution $substitution)
     {
         $substitution->update($request->all());
-        return $substitution; 
+        return $substitution;
     }
 
     /**

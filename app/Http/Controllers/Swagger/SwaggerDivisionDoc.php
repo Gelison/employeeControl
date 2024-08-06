@@ -56,7 +56,7 @@ use Illuminate\Http\Request;
  * @OA\Get(
  *     path="/api/division/{division}",
  *     summary="get division\ получение одной записи уровня образования ",
- *     tags={"division"},
+ *     tags={"Division"},
  *      @OA\Parameter(
  *         description="division ID ",
  *         in="path",
@@ -119,7 +119,7 @@ use Illuminate\Http\Request;
  * @OA\Delete(
  *     path="/api/division/{division}",
  *     summary="delete division  ",
- *     tags={"division"},
+ *     tags={"Division"},
  * 
  *     @OA\Parameter(
  *         description="удаление",

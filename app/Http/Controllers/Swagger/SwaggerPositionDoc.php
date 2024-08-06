@@ -119,7 +119,7 @@ use Illuminate\Http\Request;
  * @OA\Delete(
  *     path="/api/position/{position}",
  *     summary="delete position \ удаление position ",
- *     tags={"position"},
+ *     tags={"Position"},
  * 
  *     @OA\Parameter(
  *         description="удаление",
@@ -137,7 +137,7 @@ use Illuminate\Http\Request;
  *             
  *              
  *          ),
- *                   
+ *
  *     ),
  * ),
  * 

@@ -50,23 +50,26 @@ class User extends Authenticatable
 
 
 
-    public function hasAnyRole($roles)
+
+    public function hasAnyRole($roles): bool
     {
+        $roleName = $this->getRoleName(); // Получаем имя роли пользователя
+
         if (!is_array($roles)) {
-            $roles = [$roles];
+            $roles = [$roles]; // Преобразуем в массив, если передано одно значение
         }
 
         foreach ($roles as $role) {
-            if (strtolower($role) === strtolower($this->roleInfo->role->name)) {
-                return true;
+            if (strtolower($role) === strtolower($roleName)) {
+                return true; // Если роль совпадает, возвращаем true
             }
         }
 
-        return false;
+        return false; // Если ни одна из ролей не совпадает, возвращаем false
     }
-    
-    
 
+
+    //Связи
     public function information(): HasOne
     {
         return $this->hasOne(Information::class);

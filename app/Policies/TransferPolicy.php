@@ -2,28 +2,24 @@
 
 namespace App\Policies;
 
-use App\Models\Level;
+use App\Models\Transfer;
 use App\Models\User;
-use GuzzleHttp\Psr7\Response;
+use Illuminate\Auth\Access\Response;
 
-class LevelPolicy
+class TransferPolicy
 {
     /**
      * Determine whether the user can view any models.
      */
     public function viewAny(User $user): bool
     {
-
         return true;
-        // return $user->getRoleName() === 'admin' || $user->getRoleName() === 'manager';
     }
-
-
 
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, Level $level): bool
+    public function view(User $user, Transfer $transfer): bool
     {
         return true;
     }
@@ -39,25 +35,31 @@ class LevelPolicy
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, Level $level): bool
+    public function update(User $user, Transfer $transfer): bool
     {
-        return $user->hasAnyRole(['admin', 'manager']) || $level->user_id === $user->id;
+        return $user->hasAnyRole(['admin', 'manager']) || $transfer->user_id === $user->id;
     }
 
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, Level $level): bool
+    public function delete(User $user, Transfer $transfer): bool
     {
         return $user->hasAnyRole(['admin', 'manager']);
     }
 
-
+    /**
+     * Determine whether the user can restore the model.
+     */
+    public function restore(User $user, Transfer $transfer): bool
+    {
+        return $user->hasAnyRole(['admin', 'manager']);
+    }
 
     /**
      * Determine whether the user can permanently delete the model.
      */
-    public function forceDelete(User $user, Level $level): bool
+    public function forceDelete(User $user, Transfer $transfer): bool
     {
         return $user->hasAnyRole(['admin', 'manager']);
     }
