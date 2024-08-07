@@ -15,7 +15,8 @@ class EducationController extends Controller
      */
     public function index()
     {
-        return EducationResource::collection(Education::paginate(5));
+        return response()->json([
+            'massage' => 'route not available']);
     }
 
     /**

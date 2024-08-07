@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
  * @OA\Post(
  *     path="/api/transfer/",
  *     summary="post transfer\создание transfer ",
- *     tags={"transfer"},
+ *     tags={"Transfer"},
  *     @OA\RequestBody(
  *          @OA\JsonContent(
  *              allOf={

@@ -34,10 +34,7 @@ class SubstitutionController extends Controller
      */
     public function show(Substitution $substitution)
     {
-       
-        return response()->json([
-            'massage' => 'route not available']);
-        // return new SubstitutionResource($substitution);
+        return new SubstitutionResource($substitution);
     }
 
     /**

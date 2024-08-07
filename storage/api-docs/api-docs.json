@@ -6,6 +6,312 @@
     },
     "paths": {
         "/api/documentation/": {},
+        "/api/certification/": {
+            "get": {
+                "tags": [
+                    "Certification"
+                ],
+                "summary": "get certification \\  ",
+                "operationId": "3a23bfe16a114c988031532d5df4cd2a",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "massage": {
+                                            "type": "string",
+                                            "example": "route not available"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Certification"
+                ],
+                "summary": "post certification\\создание certification ",
+                "operationId": "21007290b5e99033accf19b0d824132b",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "allOf": [
+                                    {
+                                        "properties": {
+                                            "informationId": {
+                                                "type": "integer",
+                                                "example": "1"
+                                            },
+                                            "date": {
+                                                "type": "string",
+                                                "example": "01.01.2000"
+                                            },
+                                            "record_number": {
+                                                "type": "string",
+                                                "example": "12354"
+                                            },
+                                            "division": {
+                                                "type": "integer",
+                                                "example": "1"
+                                            },
+                                            "position": {
+                                                "type": "integer",
+                                                "example": "1"
+                                            },
+                                            "recomendetion": {
+                                                "type": "string",
+                                                "example": "рекомандация"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "informationId": {
+                                            "type": "integer",
+                                            "example": "1"
+                                        },
+                                        "date": {
+                                            "type": "string",
+                                            "example": "01.01.2000"
+                                        },
+                                        "record_number": {
+                                            "type": "string",
+                                            "example": "12354"
+                                        },
+                                        "division": {
+                                            "type": "integer",
+                                            "example": "1"
+                                        },
+                                        "divisionName": {
+                                            "type": "string",
+                                            "example": "рекомандация"
+                                        },
+                                        "position": {
+                                            "type": "integer",
+                                            "example": "1"
+                                        },
+                                        "positionName": {
+                                            "type": "string",
+                                            "example": "рекомандация"
+                                        },
+                                        "recomendetion": {
+                                            "type": "string",
+                                            "example": "рекомандация"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/certification/{certification}": {
+            "get": {
+                "tags": [
+                    "Certification"
+                ],
+                "summary": "get certification\\ получение одной записи уровня образования ",
+                "operationId": "73072120a5fb0688df63d6b4d82a3175",
+                "parameters": [
+                    {
+                        "name": "certification",
+                        "in": "path",
+                        "description": "certification ID \\ id уровня",
+                        "required": true,
+                        "example": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "massage": {
+                                            "type": "string",
+                                            "example": "route not available"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Certification"
+                ],
+                "summary": "delete certification \\ удаление certification ",
+                "operationId": "35957f87a535ca050c2941ca9ba02332",
+                "parameters": [
+                    {
+                        "name": "level",
+                        "in": "path",
+                        "description": "удаление",
+                        "required": true,
+                        "example": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "massage": {
+                                            "type": "string",
+                                            "example": "entiti removed"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Certification"
+                ],
+                "summary": "patch certification\\ обновление ",
+                "operationId": "4c856fc3fa79fc68a7ea91f09e16c956",
+                "parameters": [
+                    {
+                        "name": "certification",
+                        "in": "path",
+                        "description": "certification ID \\ id уровня",
+                        "required": true,
+                        "example": 2
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "allOf": [
+                                    {
+                                        "properties": {
+                                            "informationId": {
+                                                "type": "integer",
+                                                "example": "1"
+                                            },
+                                            "date": {
+                                                "type": "string",
+                                                "example": "01.01.2000"
+                                            },
+                                            "record_number": {
+                                                "type": "string",
+                                                "example": "12354"
+                                            },
+                                            "division": {
+                                                "type": "integer",
+                                                "example": "1"
+                                            },
+                                            "divisionName": {
+                                                "type": "string",
+                                                "example": "рекомандация"
+                                            },
+                                            "position": {
+                                                "type": "integer",
+                                                "example": "1"
+                                            },
+                                            "positionName": {
+                                                "type": "string",
+                                                "example": "рекомандация"
+                                            },
+                                            "recomendetion": {
+                                                "type": "string",
+                                                "example": "рекомандация"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "informationId": {
+                                                        "type": "integer",
+                                                        "example": "1"
+                                                    },
+                                                    "date": {
+                                                        "type": "string",
+                                                        "example": "01.01.2000"
+                                                    },
+                                                    "record_number": {
+                                                        "type": "string",
+                                                        "example": "12354"
+                                                    },
+                                                    "division": {
+                                                        "type": "integer",
+                                                        "example": "1"
+                                                    },
+                                                    "divisionName": {
+                                                        "type": "string",
+                                                        "example": "рекомандация"
+                                                    },
+                                                    "position": {
+                                                        "type": "integer",
+                                                        "example": "1"
+                                                    },
+                                                    "positionName": {
+                                                        "type": "string",
+                                                        "example": "рекомандация"
+                                                    },
+                                                    "recomendetion": {
+                                                        "type": "string",
+                                                        "example": "рекомандация"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/api/division/": {
             "get": {
                 "tags": [
@@ -460,6 +766,605 @@
                                                     "name": {
                                                         "type": "string",
                                                         "example": "Сведетельство"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/education/": {
+            "get": {
+                "tags": [
+                    "Education"
+                ],
+                "summary": "get education \\  ",
+                "operationId": "b5dd8a1d8bf15e383b3e648e4771113d",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "informationId": {
+                                                        "type": "integer",
+                                                        "example": "1"
+                                                    },
+                                                    "date": {
+                                                        "type": "string",
+                                                        "example": "01.01.2000"
+                                                    },
+                                                    "doctypeId": {
+                                                        "type": "integer",
+                                                        "example": "1"
+                                                    },
+                                                    "number": {
+                                                        "type": "string",
+                                                        "example": "12354"
+                                                    },
+                                                    "levelId": {
+                                                        "type": "integer",
+                                                        "example": "1"
+                                                    },
+                                                    "qualification": {
+                                                        "type": "string",
+                                                        "example": "рекомандация"
+                                                    },
+                                                    "speciality": {
+                                                        "type": "string",
+                                                        "example": "рекомандация"
+                                                    },
+                                                    "rank": {
+                                                        "type": "string",
+                                                        "example": "рекомандация"
+                                                    },
+                                                    "education_form": {
+                                                        "type": "string",
+                                                        "example": "рекомандация"
+                                                    },
+                                                    "institution": {
+                                                        "type": "string",
+                                                        "example": "рекомандация"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Education"
+                ],
+                "summary": "post education\\создание education ",
+                "operationId": "0114126ee8f9e2b3445a96d3c36cab4e",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "allOf": [
+                                    {
+                                        "properties": {
+                                            "informationId": {
+                                                "type": "integer",
+                                                "example": "1"
+                                            },
+                                            "date": {
+                                                "type": "string",
+                                                "example": "01.01.2000"
+                                            },
+                                            "doctypeId": {
+                                                "type": "integer",
+                                                "example": "1"
+                                            },
+                                            "number": {
+                                                "type": "string",
+                                                "example": "12354"
+                                            },
+                                            "levelId": {
+                                                "type": "integer",
+                                                "example": "1"
+                                            },
+                                            "qualification": {
+                                                "type": "string",
+                                                "example": "рекомандация"
+                                            },
+                                            "speciality": {
+                                                "type": "string",
+                                                "example": "рекомандация"
+                                            },
+                                            "rank": {
+                                                "type": "string",
+                                                "example": "рекомандация"
+                                            },
+                                            "education_form": {
+                                                "type": "string",
+                                                "example": "рекомандация"
+                                            },
+                                            "institution": {
+                                                "type": "string",
+                                                "example": "рекомандация"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "informationId": {
+                                            "type": "integer",
+                                            "example": "1"
+                                        },
+                                        "date": {
+                                            "type": "string",
+                                            "example": "01.01.2000"
+                                        },
+                                        "doctypeId": {
+                                            "type": "integer",
+                                            "example": "1"
+                                        },
+                                        "number": {
+                                            "type": "string",
+                                            "example": "12354"
+                                        },
+                                        "levelId": {
+                                            "type": "integer",
+                                            "example": "1"
+                                        },
+                                        "qualification": {
+                                            "type": "string",
+                                            "example": "рекомандация"
+                                        },
+                                        "speciality": {
+                                            "type": "string",
+                                            "example": "рекомандация"
+                                        },
+                                        "rank": {
+                                            "type": "string",
+                                            "example": "рекомандация"
+                                        },
+                                        "education_form": {
+                                            "type": "string",
+                                            "example": "рекомандация"
+                                        },
+                                        "institution": {
+                                            "type": "string",
+                                            "example": "рекомандация"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/education/{education}": {
+            "get": {
+                "tags": [
+                    "Education"
+                ],
+                "summary": "get education\\ получение одной записи уровня образования ",
+                "operationId": "dfccc589adb3f5d9fb5155e290620fe8",
+                "parameters": [
+                    {
+                        "name": "education",
+                        "in": "path",
+                        "description": "education ID \\ id уровня",
+                        "required": true,
+                        "example": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "massage": {
+                                            "type": "string",
+                                            "example": "route not available"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Education"
+                ],
+                "summary": "delete education \\ удаление education ",
+                "operationId": "d15449d3a0705a944e005e8a120570d3",
+                "parameters": [
+                    {
+                        "name": "level",
+                        "in": "path",
+                        "description": "удаление",
+                        "required": true,
+                        "example": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "massage": {
+                                            "type": "string",
+                                            "example": "entiti removed"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Education"
+                ],
+                "summary": "patch education\\ обновление ",
+                "operationId": "8c635c2e340f455ddca74f9521d76464",
+                "parameters": [
+                    {
+                        "name": "education",
+                        "in": "path",
+                        "description": "education ID \\ id уровня",
+                        "required": true,
+                        "example": 2
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "allOf": [
+                                    {
+                                        "properties": {
+                                            "informationId": {
+                                                "type": "integer",
+                                                "example": "1"
+                                            },
+                                            "date": {
+                                                "type": "string",
+                                                "example": "01.01.2000"
+                                            },
+                                            "doctypeId": {
+                                                "type": "integer",
+                                                "example": "1"
+                                            },
+                                            "number": {
+                                                "type": "string",
+                                                "example": "12354"
+                                            },
+                                            "levelId": {
+                                                "type": "integer",
+                                                "example": "1"
+                                            },
+                                            "qualification": {
+                                                "type": "string",
+                                                "example": "рекомандация"
+                                            },
+                                            "speciality": {
+                                                "type": "string",
+                                                "example": "рекомандация"
+                                            },
+                                            "rank": {
+                                                "type": "string",
+                                                "example": "рекомандация"
+                                            },
+                                            "education_form": {
+                                                "type": "string",
+                                                "example": "рекомандация"
+                                            },
+                                            "institution": {
+                                                "type": "string",
+                                                "example": "рекомандация"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "informationId": {
+                                                        "type": "integer",
+                                                        "example": "1"
+                                                    },
+                                                    "date": {
+                                                        "type": "string",
+                                                        "example": "01.01.2000"
+                                                    },
+                                                    "doctypeId": {
+                                                        "type": "integer",
+                                                        "example": "1"
+                                                    },
+                                                    "number": {
+                                                        "type": "string",
+                                                        "example": "12354"
+                                                    },
+                                                    "levelId": {
+                                                        "type": "integer",
+                                                        "example": "1"
+                                                    },
+                                                    "qualification": {
+                                                        "type": "string",
+                                                        "example": "рекомандация"
+                                                    },
+                                                    "speciality": {
+                                                        "type": "string",
+                                                        "example": "рекомандация"
+                                                    },
+                                                    "rank": {
+                                                        "type": "string",
+                                                        "example": "рекомандация"
+                                                    },
+                                                    "education_form": {
+                                                        "type": "string",
+                                                        "example": "рекомандация"
+                                                    },
+                                                    "institution": {
+                                                        "type": "string",
+                                                        "example": "рекомандация"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/information/": {
+            "get": {
+                "tags": [
+                    "Information"
+                ],
+                "summary": "get information \\  ",
+                "operationId": "eb561bd93ffb250df5b60398a63d92a9",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer",
+                                            "example": "1"
+                                        },
+                                        "userId": {
+                                            "type": "integer",
+                                            "example": "2"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Information"
+                ],
+                "summary": "post information\\создание information ",
+                "operationId": "33d43e74e3eb4519dd08f3db57ae25cd",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "allOf": [
+                                    {
+                                        "properties": {
+                                            "userId": {
+                                                "type": "integer",
+                                                "example": "2"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer",
+                                            "example": "1"
+                                        },
+                                        "userId": {
+                                            "type": "integer",
+                                            "example": "2"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/information/{information}": {
+            "get": {
+                "tags": [
+                    "Information"
+                ],
+                "summary": "get information\\  ",
+                "operationId": "2f32eddc20c2aa1dcc1ba230ace98454",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer",
+                                            "example": "1"
+                                        },
+                                        "userId": {
+                                            "type": "integer",
+                                            "example": "2"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Information"
+                ],
+                "summary": "delete information \\ удаление information ",
+                "operationId": "d3ad854d8d5ad02bbe74436826cb3541",
+                "parameters": [
+                    {
+                        "name": "level",
+                        "in": "path",
+                        "description": "удаление",
+                        "required": true,
+                        "example": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "massage": {
+                                            "type": "string",
+                                            "example": "entiti removed"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Information"
+                ],
+                "summary": "patch information\\ обновление ",
+                "operationId": "7d4cc9486626a9cefe7863f7aefe2095",
+                "parameters": [
+                    {
+                        "name": "information",
+                        "in": "path",
+                        "description": "information ID \\ id уровня",
+                        "required": true,
+                        "example": 2
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "allOf": [
+                                    {
+                                        "properties": {
+                                            "userId": {
+                                                "type": "integer",
+                                                "example": "2"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer",
+                                                        "example": "1"
+                                                    },
+                                                    "userId": {
+                                                        "type": "integer",
+                                                        "example": "2"
                                                     }
                                                 },
                                                 "type": "object"
@@ -941,6 +1846,276 @@
                     }
                 }
             }
+        },
+        "/api/substitution/{substitution}": {
+            "delete": {
+                "tags": [
+                    "Substitution"
+                ],
+                "summary": "delete substitution \\ удаление substitution ",
+                "operationId": "0242e7ebf19822fbba2faaa5bb9849b9",
+                "parameters": [
+                    {
+                        "name": "level",
+                        "in": "path",
+                        "description": "удаление",
+                        "required": true,
+                        "example": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "massage": {
+                                            "type": "string",
+                                            "example": "entiti removed"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/transfer/": {
+            "get": {
+                "tags": [
+                    "Transfer"
+                ],
+                "summary": "get transfer   ",
+                "operationId": "847d111eca3e176636162edb4c25342c",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer",
+                                                        "example": "1"
+                                                    },
+                                                    "name": {
+                                                        "type": "string",
+                                                        "example": "программист"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "transfer"
+                ],
+                "summary": "post transfer\\создание transfer ",
+                "operationId": "89a6359d839a04cc79cc02d740d853fe",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "allOf": [
+                                    {
+                                        "properties": {
+                                            "name": {
+                                                "type": "string",
+                                                "example": "программист"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer",
+                                            "example": "1"
+                                        },
+                                        "name": {
+                                            "type": "string",
+                                            "example": "программист"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/transfer/{transfer}": {
+            "get": {
+                "tags": [
+                    "Transfer"
+                ],
+                "summary": "get transfer\\ получение одной записи уровня образования ",
+                "operationId": "9d1a94ba3e8cacad50b7954b6f8dec39",
+                "parameters": [
+                    {
+                        "name": "transfer",
+                        "in": "path",
+                        "description": "transfer ID \\ id уровня",
+                        "required": true,
+                        "example": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer",
+                                                        "example": "1"
+                                                    },
+                                                    "name": {
+                                                        "type": "string",
+                                                        "example": "программист"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Transfer"
+                ],
+                "summary": "delete transfer \\ удаление transfer ",
+                "operationId": "64c4ba59706064e4c9c339f744cd5bcf",
+                "parameters": [
+                    {
+                        "name": "level",
+                        "in": "path",
+                        "description": "удаление",
+                        "required": true,
+                        "example": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "massage": {
+                                            "type": "string",
+                                            "example": "entiti removed"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Transfer"
+                ],
+                "summary": "patch transfer\\ обновление ",
+                "operationId": "d889d31cc1f22f54ac4ce2c21a2fcb8b",
+                "parameters": [
+                    {
+                        "name": "transfer",
+                        "in": "path",
+                        "description": "transfer ID \\ id уровня",
+                        "required": true,
+                        "example": 2
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "allOf": [
+                                    {
+                                        "properties": {
+                                            "name": {
+                                                "type": "string",
+                                                "example": "программист"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer",
+                                                        "example": "1"
+                                                    },
+                                                    "name": {
+                                                        "type": "string",
+                                                        "example": "программист"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     },
     "components": {
@@ -953,6 +2128,10 @@
     },
     "tags": [
         {
+            "name": "Certification",
+            "description": "Certification"
+        },
+        {
             "name": "Division",
             "description": "Division"
         },
@@ -961,12 +2140,32 @@
             "description": "Doctype"
         },
         {
+            "name": "Education",
+            "description": "Education"
+        },
+        {
+            "name": "Information",
+            "description": "Information"
+        },
+        {
             "name": "Level",
             "description": "Level"
         },
         {
             "name": "Position",
             "description": "Position"
+        },
+        {
+            "name": "Substitution",
+            "description": "Substitution"
+        },
+        {
+            "name": "transfer",
+            "description": "transfer"
+        },
+        {
+            "name": "Transfer",
+            "description": "Transfer"
         }
     ]
 }

@@ -17,7 +17,6 @@ class CertificationController extends Controller
     {
         return response()->json([
             'massage' => 'route not available']);
-        // return CertificationResource::collection(Certification::paginate(5));
     }
 
     /**
@@ -35,7 +34,6 @@ class CertificationController extends Controller
     {
         return response()->json([
             'massage' => 'route not available']);
-        // return new CertificationResource($certification);
     }
 
     /**

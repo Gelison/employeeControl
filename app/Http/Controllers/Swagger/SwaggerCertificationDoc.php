@@ -15,7 +15,14 @@ use Illuminate\Http\Request;
  *          @OA\JsonContent(
  *              allOf={
  *                  @OA\Schema(
- *                     @OA\Property(property="name", type="string", example="программист"), 
+ *                     @OA\Property(property="informationId", type="integer", example="1"), 
+ *                     @OA\Property(property="date", type="string", example="01.01.2000"), 
+ *                     @OA\Property(property="record_number", type="string", example="12354"), 
+ *                     @OA\Property(property="division", type="integer", example="1"), 
+ *                     @OA\Property(property="position", type="integer", example="1"), 
+ *                     @OA\Property(property="recomendetion", type="string", example="рекомандация"), 
+ *
+ * 
  *                  )
  *              }
  *          )
@@ -24,8 +31,14 @@ use Illuminate\Http\Request;
  *         response=200,
  *         description="OK",
  *         @OA\JsonContent(
- *              @OA\Property(property="id", type="integer", example="1"),
- *              @OA\Property(property="name", type="string", example="программист"),
+ *               @OA\Property(property="informationId", type="integer", example="1"), 
+ *               @OA\Property(property="date", type="string", example="01.01.2000"), 
+ *               @OA\Property(property="record_number", type="string", example="12354"), 
+ *               @OA\Property(property="division", type="integer", example="1"), 
+ *               @OA\Property(property="divisionName", type="string", example="рекомандация"), 
+ *               @OA\Property(property="position", type="integer", example="1"), 
+ *               @OA\Property(property="positionName", type="string", example="рекомандация"), 
+ *               @OA\Property(property="recomendetion", type="string", example="рекомандация"), 
  *   
  *          ),
  *                   
@@ -43,15 +56,9 @@ use Illuminate\Http\Request;
  *         response=200,
  *         description="OK",
  *         @OA\JsonContent(
- *            @OA\Property(property = "data", type = "array", @OA\Items(
- *              @OA\Property(property="id", type="integer", example="1"),
- *              @OA\Property(property="name", type="string", example="программист"),
- *            )),
- *             
- *              
+ *            @OA\Property(property = "massage", type = "string", example="route not available"),
+ *              ),
  *          ),
- *                   
- *     ),
  * ),
  * 
  * @OA\Get(
@@ -69,10 +76,8 @@ use Illuminate\Http\Request;
  *         response=200,
  *         description="OK",
  *         @OA\JsonContent(
- *            @OA\Property(property = "data", type = "array", @OA\Items(
- *              @OA\Property(property="id", type="integer", example="1"),
- *              @OA\Property(property="name", type="string", example="программист"),
- *            )),
+ *            @OA\Property(property = "massage", type = "string", example="route not available"),
+ *
  *             
  *              
  *          ),
@@ -96,7 +101,14 @@ use Illuminate\Http\Request;
  *          @OA\JsonContent(
  *              allOf={
  *                  @OA\Schema(
- *                     @OA\Property(property="name", type="string", example="программист"), 
+ *                     @OA\Property(property="informationId", type="integer", example="1"), 
+ *                     @OA\Property(property="date", type="string", example="01.01.2000"), 
+ *                     @OA\Property(property="record_number", type="string", example="12354"), 
+ *                     @OA\Property(property="division", type="integer", example="1"), 
+ *                     @OA\Property(property="divisionName", type="string", example="рекомандация"), 
+ *                     @OA\Property(property="position", type="integer", example="1"), 
+ *                     @OA\Property(property="positionName", type="string", example="рекомандация"), 
+ *                     @OA\Property(property="recomendetion", type="string", example="рекомандация"), 
  *                  )
  *              }
  *          )
@@ -106,8 +118,14 @@ use Illuminate\Http\Request;
  *         description="OK",
  *         @OA\JsonContent(
  *            @OA\Property(property = "data", type = "array", @OA\Items(
- *              @OA\Property(property="id", type="integer", example="1"),
- *              @OA\Property(property="name", type="string", example="программист"),
+ *                @OA\Property(property="informationId", type="integer", example="1"), 
+ *                @OA\Property(property="date", type="string", example="01.01.2000"), 
+ *                @OA\Property(property="record_number", type="string", example="12354"), 
+ *                @OA\Property(property="division", type="integer", example="1"), 
+ *                @OA\Property(property="divisionName", type="string", example="рекомандация"), 
+ *                @OA\Property(property="position", type="integer", example="1"), 
+ *                @OA\Property(property="positionName", type="string", example="рекомандация"), 
+ *                @OA\Property(property="recomendetion", type="string", example="рекомандация"), 
  *            )),
  *             
  *              
