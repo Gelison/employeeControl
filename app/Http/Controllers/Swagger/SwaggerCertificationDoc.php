@@ -21,8 +21,6 @@ use Illuminate\Http\Request;
  *                     @OA\Property(property="division", type="integer", example="1"), 
  *                     @OA\Property(property="position", type="integer", example="1"), 
  *                     @OA\Property(property="recomendetion", type="string", example="рекомандация"), 
- *
- * 
  *                  )
  *              }
  *          )

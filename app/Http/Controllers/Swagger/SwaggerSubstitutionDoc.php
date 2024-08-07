@@ -18,7 +18,7 @@ use Illuminate\Http\Request;
  *                   @OA\Property(property="date", type="string", example="01.01.2000"),
  *                   @OA\Property(property="order_number", type="string", example="123"),
  *                   @OA\Property(property="substitutions_occasion", type="string", example="программист"),
- *                   @OA\Property(property="positionId", type="integer", example="1"),   
+ *                   @OA\Property(property="positionId", type="integer", example="1")  
  *                  )
  *              }
  *          )
@@ -33,7 +33,7 @@ use Illuminate\Http\Request;
  *              @OA\Property(property="date", type="string", example="01.01.2000"),
  *              @OA\Property(property="order_number", type="string", example="123"),
  *              @OA\Property(property="substitutions_occasion", type="string", example="программист"),
- *              @OA\Property(property="positionId", type="integer", example="1"),   
+ *              @OA\Property(property="positionId", type="integer", example="1")   
  *          ),
  *                   
  *     ),
@@ -42,7 +42,7 @@ use Illuminate\Http\Request;
  * 
  * @OA\Get(
  *     path="/api/substitution/",
- *     summary="get substitution \  ",
+ *     summary="get substitution",
  *     tags={"Substitution"},
  *    
  *     
@@ -58,9 +58,9 @@ use Illuminate\Http\Request;
  * 
  * @OA\Get(
  *     path="/api/substitution/{substitution}",
- *     summary="get substitution,
+ *     summary="get substitution",
  *     tags={"Substitution"},
- *      @OA\Parameter(
+ *     @OA\Parameter(
  *         description="substitution ID \ id substitution",
  *         in="path",
  *         name="substitution",
@@ -71,19 +71,11 @@ use Illuminate\Http\Request;
  *         response=200,
  *         description="OK",
  *         @OA\JsonContent(
- *         @OA\JsonContent(
- *           @OA\Property(property = "data", type = "array", @OA\Items(
- *              @OA\Property(property="id", type="integer", example="1"),
- *              @OA\Property(property="informationId", type="string", example="1"),
- *              @OA\Property(property="date", type="string", example="01.01.2000"),
- *              @OA\Property(property="order_number", type="string", example="123"),
- *              @OA\Property(property="substitutions_occasion", type="string", example="программист"),
- *              @OA\Property(property="positionId", type="integer", example="1"),   
- *          ),
+ *            @OA\Property(property="massage", type="string", example="route not available")
+ *          )
  *                   
- *     ),
- * 
- * ),
+ *     )
+ * )
  * 
  * @OA\Patch(
  *     path="/api/substitution/{substitution}",
@@ -99,12 +91,12 @@ use Illuminate\Http\Request;
  *  @OA\RequestBody(
  *          @OA\JsonContent(
  *              allOf={
- *                  @OA\Schema(
+ *                 @OA\Schema(
  *                   @OA\Property(property="informationId", type="string", example="1"),
  *                   @OA\Property(property="date", type="string", example="01.01.2000"),
  *                   @OA\Property(property="order_number", type="string", example="123"),
  *                   @OA\Property(property="substitutions_occasion", type="string", example="программист"),
- *                   @OA\Property(property="positionId", type="integer", example="1"),   
+ *                   @OA\Property(property="positionId", type="integer", example="1")  
  *                  )
  *              }
  *          )
@@ -113,13 +105,12 @@ use Illuminate\Http\Request;
  *         response=200,
  *         description="OK",
  *         @OA\JsonContent(
- *           @OA\Property(property = "data", type = "array", @OA\Items(
- *              @OA\Property(property="id", type="integer", example="1"),
- *              @OA\Property(property="informationId", type="string", example="1"),
- *              @OA\Property(property="date", type="string", example="01.01.2000"),
- *              @OA\Property(property="order_number", type="string", example="123"),
- *              @OA\Property(property="substitutions_occasion", type="string", example="программист"),
- *              @OA\Property(property="positionId", type="integer", example="1"),   
+ *            @OA\Property(property = "data", type = "array", @OA\Items(
+ *                   @OA\Property(property="informationId", type="string", example="1"),
+ *                   @OA\Property(property="date", type="string", example="01.01.2000"),
+ *                   @OA\Property(property="order_number", type="string", example="123"),
+ *                   @OA\Property(property="substitutions_occasion", type="string", example="программист"),
+ *                   @OA\Property(property="positionId", type="integer", example="1")  
  *            )),
  *             
  *              
@@ -152,7 +143,8 @@ use Illuminate\Http\Request;
  *          ),
  *
  *     ),
- * ),
+ *   ),
+ * 
  * 
  * 
  */

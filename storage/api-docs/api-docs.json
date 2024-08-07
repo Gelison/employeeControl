@@ -1881,6 +1881,99 @@
                         }
                     }
                 }
+            },
+            "patch": {
+                "tags": [
+                    "Substitution"
+                ],
+                "summary": "patch substitution\\ обновление ",
+                "operationId": "c2582a380047c338c54a557535cb0813",
+                "parameters": [
+                    {
+                        "name": "substitution",
+                        "in": "path",
+                        "description": "substitution ID \\ id уровня",
+                        "required": true,
+                        "example": 2
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "allOf": [
+                                    {
+                                        "properties": {
+                                            "informationId": {
+                                                "type": "string",
+                                                "example": "1"
+                                            },
+                                            "date": {
+                                                "type": "string",
+                                                "example": "01.01.2000"
+                                            },
+                                            "order_number": {
+                                                "type": "string",
+                                                "example": "123"
+                                            },
+                                            "substitutions_occasion": {
+                                                "type": "string",
+                                                "example": "программист"
+                                            },
+                                            "positionId": {
+                                                "type": "integer",
+                                                "example": "1"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "informationId": {
+                                                        "type": "string",
+                                                        "example": "1"
+                                                    },
+                                                    "date": {
+                                                        "type": "string",
+                                                        "example": "01.01.2000"
+                                                    },
+                                                    "order_number": {
+                                                        "type": "string",
+                                                        "example": "123"
+                                                    },
+                                                    "substitutions_occasion": {
+                                                        "type": "string",
+                                                        "example": "программист"
+                                                    },
+                                                    "positionId": {
+                                                        "type": "integer",
+                                                        "example": "1"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
             }
         },
         "/api/transfer/": {
@@ -1923,7 +2016,7 @@
             },
             "post": {
                 "tags": [
-                    "transfer"
+                    "Transfer"
                 ],
                 "summary": "post transfer\\создание transfer ",
                 "operationId": "89a6359d839a04cc79cc02d740d853fe",
@@ -2158,10 +2251,6 @@
         {
             "name": "Substitution",
             "description": "Substitution"
-        },
-        {
-            "name": "transfer",
-            "description": "transfer"
         },
         {
             "name": "Transfer",
