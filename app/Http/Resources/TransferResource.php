@@ -35,7 +35,6 @@ class TransferResource extends JsonResource
 
 
             'created' => Carbon::parse($this->created_at)->format('Y-m-d'),
-            // 'updated' => Carbon::parse($this->updated_at)->format('Y-m-d'),
         ];
     }
 }

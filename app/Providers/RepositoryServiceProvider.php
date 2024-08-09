@@ -15,6 +15,7 @@ use App\Repositories\LevelInterface;
 use App\Repositories\LevelRepository;
 use App\Repositories\PositionInterface;
 use App\Repositories\PositionRepository;
+use App\Repositories\ReadableDivisionInterface;
 use App\Repositories\SubstitutionInterface;
 use App\Repositories\SubstitutionRepository;
 use App\Repositories\TransferInterface;
@@ -30,7 +31,7 @@ class RepositoryServiceProvider extends ServiceProvider
     {
 
         $this->app->bind(CertificationInterface::class, CertificationRepository::class);
-        $this->app->bind(DivisionInterface::class, DivisionRepository::class);
+        $this->app->bind(ReadableDivisionInterface::class, DivisionRepository::class);
         $this->app->bind(DoctypeInterface::class, DoctypeRepository::class);
         $this->app->bind(EducationInterface::class, EducationRepository::class);
         $this->app->bind(LevelInterface::class, LevelRepository::class);

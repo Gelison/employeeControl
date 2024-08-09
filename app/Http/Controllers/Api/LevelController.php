@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Events\LevelCreated;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreLevelRequest;
 use App\Http\Requests\UpdateLevelRequest;
@@ -26,9 +27,11 @@ class LevelController extends Controller
      */
     public function store(StoreLevelRequest $request )
     {
-        
+      
 
         return Level::create($request->all());
+
+        // event(new LevelCreated($level));
     }
 
     /**

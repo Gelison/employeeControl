@@ -20,10 +20,10 @@ class InformationResource extends JsonResource
             'userId' => $this->user_id,
             'userName' => $this->user->name,
 
-            'education' => EducationResource::collection($this->education),
-            'substitutions' => SubstitutionResource::collection($this->substitutions),
-            'transfers' => TransferResource::collection($this->transfers),
-            'certifications' => CertificationResource::collection($this->certifications),
+            'education' => EducationResource::collection($this->education)->whenLoaded('education'),
+            'substitutions' => SubstitutionResource::collection($this->substitutions)->whenLoaded('substitutions'),
+            'transfers' => TransferResource::collection($this->transfers)->whenLoaded('transfers'),
+            'certifications' => CertificationResource::collection($this->certifications)->whenLoaded('certifications'),
 
         ];
     }

@@ -57,5 +57,6 @@ Route::middleware(['throttle:api', 'auth:sanctum'])->group(function () {
         'division' => DivisionController::class,
 
     ]);
+    Route::resource('education', 'EducationController')->except(['index']);
     Route::get('logout', [AuthController::class, 'logout']);
 });

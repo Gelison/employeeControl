@@ -22,9 +22,6 @@ class RoleInfoResource extends JsonResource
 
             'roleId' => $this->role_id,
             'roleName' => $this->role->name,
-
-
-
         ];
     }
 }
