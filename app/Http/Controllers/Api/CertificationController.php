@@ -7,53 +7,45 @@ use App\Http\Requests\StoreCertificationRequest;
 use App\Http\Requests\UpdateCertificationRequest;
 use App\Http\Resources\CertificationResource;
 use App\Models\Certification;
+use App\Repositories\CertificationRepository;
 
 class CertificationController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    protected $certificationRepository;
+
+    public function __construct(CertificationRepository $certificationRepository)
+    {
+        $this->certificationRepository = $certificationRepository;
+    }
+
     public function index()
     {
-        return response()->json([
-            'massage' => 'route not available']);
+        $certifications = $this->certificationRepository->getAll();
+        return CertificationResource::collection($certifications);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(StoreCertificationRequest $request)
     {
-        return new CertificationResource(Certification::create($request->all()));
+        $data = $request->validated();
+        $certification = $this->certificationRepository->create($data);
+        return new CertificationResource($certification);
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Certification $certification)
     {
-        return response()->json([
-            'massage' => 'route not available']);
+        return new CertificationResource($certification);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(UpdateCertificationRequest $request, Certification $certification)
     {
-        $certification->update($request->all());
-        return $certification;
+        $data = $request->validated();
+        $certification = $this->certificationRepository->update($certification->id, $data);
+        return new CertificationResource($certification);
     }
 
-
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Certification $certification)
     {
-        $certification->delete();
-        return response()->json([
-            'massage' => 'entiti removed'
-        ]);
+        $this->certificationRepository->delete($certification->id);
+        return response()->json(['message' => 'Entity removed']);
     }
 }
